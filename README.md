@@ -11,7 +11,7 @@ This is a code repository corresponding my Personal Development Portfolio.
 
 <br>
 
-My portfolio is my resume and my business card. 
+THis portfolio is my resume and my business card. 
 
 <br>
 
