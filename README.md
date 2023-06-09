@@ -16,6 +16,9 @@ THis portfolio is my resume and my business card.
 <br>
 
 ## Technologies Used
-We're going to use React and Next.js. Setup: - run ```npm i && npm start``` 
+We're going to use React and Next.js. 
+
+### Setup: 
+- run ```npm i && npm start``` 
 
 # myPortfolio
