@@ -18,5 +18,4 @@ My portfolio is my resume and my business card.
 ## Technologies Used
 We're going to use React and Next.js. Setup: - run ```npm i && npm start``` 
 
-# myPortfolio 
 # myPortfolio
