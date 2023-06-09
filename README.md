@@ -7,9 +7,16 @@
 ![Portfolio Website](https://i.ibb.co/WgPMpts/image.png) 
 
 <br>
-This is a code repository for the corresponding video tutorial. 
-Your portfolio is your resume and your business card. 
-In this video, we will create a full Personal Development Portfolio. 
+This is a code repository corresponding my Personal Development Portfolio. 
+
+<br>
+
+My portfolio is my resume and my business card. 
+
+<br>
+
+## Technologies Used
 We're going to use React and Next.js. Setup: - run ```npm i && npm start``` 
+
 # myPortfolio 
 # myPortfolio
