@@ -95,7 +95,7 @@ function Contact() {
                         }}
                     >
                         I&apos;m all ears and eager to hear from you! 
-                        Whether it's a thrilling new opportunity or a captivating project collaboration, 
+                        Whether it&apos;s a thrilling new opportunity or a captivating project collaboration, 
                         I&apos;m ready to dive in headfirst. 
                         Don&apos;t hesitate to reach out and ping me with your questions 
                         or simply to say hi. 

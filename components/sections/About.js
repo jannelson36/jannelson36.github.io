@@ -68,7 +68,7 @@ function About() {
                         }}
                     >
                         Hello there!  <br />
-                        I'm Jan, a software developer extraordinaire driven by an 
+                        I&apos;m Jan, a software developer extraordinaire driven by an 
                         insatiable passion for creating innovative solutions. 
                         From a young age, I was captivated by the world of technology, 
                         constantly exploring and tinkering with software. 
@@ -136,7 +136,7 @@ function About() {
                             alogrithms
                         </span>,{" "}
                         allowing me to architect robust and scalable software solutions. 
-                        Whether it's tackling complex backend tasks or optimizing performance, 
+                        Whether it&apos;s tackling complex backend tasks or optimizing performance, 
                         I thrive in delivering top-notch code that exceeds expectations.{" "}
                     </motion.p>
                     <br />
@@ -190,12 +190,12 @@ function About() {
                         }}
                     >
                         Thank you for taking the time to explore my profile. 
-                        If you're seeking a dedicated and talented software developer 
+                        If you&apos;re seeking a dedicated and talented software developer 
                         to join your team or collaborate on a project, 
-                        I'm here and ready to make a significant impact. 
-                        Let's turn your ideas into reality 
+                        I&apos;m here and ready to make a significant impact. 
+                        Let&apos;s turn your ideas into reality 
                         and build something truly remarkable together. 
-                        Don't hesitate to reach out—I&apos;m excited to connect with you!
+                        Don&apos;t hesitate to reach out—I&apos;m excited to connect with you!
                     </motion.p>
                 </div>
                 <motion.div
