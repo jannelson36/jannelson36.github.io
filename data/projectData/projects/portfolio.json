@@ -1,0 +1,26 @@
+{
+    "title": "Portfolio",
+    "slug":"portfolio",
+    "overview": "This is the new version of my portfolio website created using Next.js framework.",
+    "type": "Website",
+    "timeline": {
+        "startDate": "08 June 2023",
+        "endDate": "10 June 2023"
+    },
+    "associated": {
+        "name": "Personal project"
+    },
+    "stack": [
+        "Next.js", "React.js", "Node.js", "Tailwind"
+    ],
+    "links": {
+        "github": "https://github.com/jannelson36/jannelson36.github.io",
+        "hosted": "https://jannelson36.github.io/"
+    },
+    "images":[
+        {
+            "path":"/projects/portfolio/portfolio.png",
+            "alt":"Image showing the home page of the portfolio website."
+        }
+    ]
+}

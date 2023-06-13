@@ -1,0 +1,26 @@
+{
+    "title": "Monty Bytecode Interpreter",
+    "slug":"monty-bytecode-interpreter",
+    "overview": "Monty Interpreter reads Monty bytecode files of any extension (preferably .m although it doesn't matter), and interprets the opcodes contained.",
+    "type":"Interpreter",
+    "timeline":{
+        "startDate":"08 December 2022",
+        "endDate":"15 December 2022"
+    },
+    "associated":{
+        "name":"ALX SE Project"
+    },
+    "stack":[
+        "C"
+    ],
+    "links":{
+        "github":"https://github.com/jannelson36/monty",
+        "hosted":false
+    },
+    "images":[
+        {
+            "path":"/projects/monty/monty.png",
+            "alt":"Image showing the home screen of Monty Interpreter."
+        }
+    ]
+}

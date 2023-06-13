@@ -1,0 +1,166 @@
+[
+    {
+        "title": "Concepts",
+        "skills": [
+            {
+                "name": "Object Oriented Programming",
+                "icon": null
+            },
+            {
+                "name": "Functional Programming",
+                "icon": null
+            },
+            {
+                "name": "Database Administration",
+                "icon": null
+            },
+            {
+                "name": "Data structures and algorightms",
+                "icon": null
+            }
+        ],
+        "index": 8
+    },
+    {
+        "title":"Cloud",
+        "skills":[
+            {
+                "name":"Amazon AWS",
+                "icon":"AmazonwebservicesOriginal"
+            },
+            {
+                "name":"Github Actions",
+                "icon":"GithubOriginal"
+            }
+        ],
+        "index":7
+    },
+    {
+        "title": "Workflow",
+        "skills": [
+            {
+                "name": "Github",
+                "icon": "GithubOriginal"
+            },
+            {
+                "name": "Git",
+                "icon": "GitOriginal"
+            },
+            {
+                "name": "Figma",
+                "icon": "FigmaOriginal"
+            }
+        ],
+        "index": 6
+    },
+    {
+        "title": "Programming Languages",
+        "skills": [
+            {
+                "name": "Java",
+                "icon": "JavaOriginal"
+            },
+            {
+                "name": "Kotlin",
+                "icon": "KotlinOriginal"
+            },
+            {
+                "name": "Python",
+                "icon": "PythonOriginal"
+            },
+            {
+                "name": "PHP",
+                "icon": "PhpOriginal"
+            },
+            {
+                "name": "C",
+                "icon": "COriginal"
+            }
+        ],
+        "index": 5
+    },
+    {
+        "title":"Databases",
+        "skills":[
+            {
+                "name":"MySQL",
+                "icon":"MysqlOriginal"
+            },
+            {
+                "name":"Postgresql",
+                "icon":"PostgresqlOriginal"
+            },
+            {
+                "name":"MongoDB",
+                "icon":"MongodbOriginal"
+            }
+        ],
+        "index":4
+    },
+    {
+        "title":"Mobile Hybrid",
+        "skills":[
+            {
+                "name":"React Native",
+                "icon":"ReactOriginal"
+            },
+            {
+                "name":"Ionic",
+                "icon":"IonicOriginal"
+            }
+        ],
+        "index":3
+    },
+    {
+        "title":"Back end",
+        "skills":[
+            {
+                "name":"Node.js",
+                "icon":"NodejsOriginal"
+            },
+            {
+                "name":"Express.js",
+                "icon":"ExpressOriginal"
+            },
+            {
+                "name":"PHP",
+                "icon":"PhpOriginal"
+            }, 
+            {
+                "name":"Codeigniter",
+                "icon":"CodeigniterPlainWordmark"
+            },
+            {
+                "name":"Symfony",
+                "icon":"SymfonyOriginal"
+            }
+        ],
+        "index":2
+    },
+    {
+        "title":"Front end",
+        "skills":[
+            {
+                "name":"JavaScript",
+                "icon":"JavascriptOriginal"
+            },
+            {
+                "name":"React.js",
+                "icon":"ReactOriginal"
+            },
+            {
+                "name":"Next.js",
+                "icon":"NextjsOriginal"
+            },
+            {
+                "name":"MUI",
+                "icon":"MaterialuiOriginal"
+            },
+            {
+                "name":"Tailwind",
+                "icon":"TailwindcssPlain"
+            }
+        ],
+        "index":1
+    }
+]

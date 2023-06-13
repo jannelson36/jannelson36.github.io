@@ -1,0 +1,26 @@
+{
+    "title": "Chat-App",
+    "slug":"chat-app",
+    "overview": "This is one of my full stack side projects. Implementing a dynamic and interactive chat application using the powerful CodeIgniter framework.",
+    "type":"Web application",
+    "timeline":{
+        "startDate":"10 June 2021",
+        "endDate":"22 June 2021"
+    },
+    "associated":{
+        "name":"Personal project"
+    },
+    "stack":[
+        "CodeIgniter","PHP","MySQL"
+    ],
+    "links":{
+        "github":"https://github.com/jannelson36/Chat-App",
+        "hosted":false
+    },
+    "images":[
+        {
+            "path":"/projects/chat-app/chatapp.png",
+            "alt":"Image showing the interface of the interactive chat application."
+        }
+    ]
+}

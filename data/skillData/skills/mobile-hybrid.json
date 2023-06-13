@@ -1,0 +1,14 @@
+{
+    "title":"Mobile Hybrid",
+    "skills":[
+        {
+            "name":"React Native",
+            "icon":"ReactOriginal"
+        },
+        {
+            "name":"Ionic",
+            "icon":"IonicOriginal"
+        }
+    ],
+    "index":3
+}

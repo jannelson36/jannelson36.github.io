@@ -1,0 +1,156 @@
+[
+    {
+        "repo_name": "Data-Visualization",
+        "title": "Data Visualization",
+        "slug": "data-viz",
+        "type": "Data Analytics",
+        "timeline": {
+            "startDate": "10 Febuary 2022",
+            "endDate": "24 March 2023"
+        },
+        "associated": {
+            "name": "Personal Project"
+        },
+        "stack": [
+            "Python"
+        ],
+        "links":{
+            "github":"",
+            "hosted":false
+        },
+        "images": [
+            {
+                "path":"/projects/data-viz/app.png",
+                "alt":"Analyzing the behavior of avocado prices and the number of avocados sold in the US between 2015 and 2018"
+            },
+            {
+                "path":"/projects/data-viz/streamy.png",
+                "alt":"Data examining GDP per Capita vs. Life Expectancy for different continents."
+            },
+            {
+                "path":"/projects/data-viz/titanic.png",
+                "alt":"A simple Titanic Dashboard"
+            }
+        ]
+    },
+    {
+        "repo_name": "monty",
+        "title": "Monty Bytecode Interpreter",
+        "slug": "monty-bytecode-interpreter",
+        "type": "Interpreter",
+        "timeline": {
+            "startDate":"08 December 2022",
+            "endDate":"15 December 2022"
+        },
+        "associated": {
+            "name": "ALX SE Project"
+        },
+        "stack": [
+            "C"
+        ],
+        "links":{
+            "github":"",
+            "hosted":false
+        },
+        "images": [
+            {
+                "path":"/projects/monty/monty.png",
+                "alt":"Image showing the home screen of Monty Interpreter."
+            }
+        ]
+    },
+    {
+        "repo_name": "Chat-App",
+        "title": "Chat-App",
+        "slug": "chat-app",
+        "type": "Web application",
+        "timeline": {
+            "startDate":"10 June 2021",
+            "endDate":"22 June 2021"
+        },
+        "associated": {
+            "name": "Personal project"
+        },
+        "stack": [
+            "CodeIgniter",
+            "PHP",
+            "MySQL"
+        ],
+        "links":{
+            "github":"",
+            "hosted":false
+        },
+        "images": [
+            {
+                "path": "/projects/chat-app/chatapp.png",
+                "alt": "Image showing the interface of the interactive chat application."
+            }
+        ]
+    },
+    {
+        "repo_name": "jannelson36.github.io",
+        "title": "Portfolio",
+        "slug": "portfolio",
+        "type": "Website",
+        "timeline": {
+            "startDate": "08 June 2023",
+            "endDate": "10 June 2023"
+        },
+        "associated": {
+            "name": "Personal Project"
+        },
+        "stack": [
+            "Next.js",
+            "React.js",
+            "Node.js",
+            "Tailwind"
+        ],
+        "links":{
+            "github":"https://github.com/jannelson36/jannelson36.github.io.git",
+            "hosted":"https://jannelson36.github.io/"
+        },
+        "images": [
+            {
+                "path": "/projects/portfolio/home.png",
+                "alt": "Image showing the home page of the portfolio website."
+            },
+            {
+                "path": "/projects/portfolio/projectPage.png",
+                "alt": "Image showing the page with should all the details about the project."
+            },
+            {
+                "path": "/projects/portfolio/allProjects.png",
+                "alt": "Image showing the page which shows all the projects in my protfolio."
+            }
+        ]
+    },
+    {
+        "repo_name": "Udagram",
+        "title": "Udagram",
+        "slug": "udagram",
+        "type": "Full Stack Application",
+        "timeline": {
+            "startDate":"14 June 2022",
+            "endDate":false
+        },
+        "associated": {
+            "name": "Udacity Cloud Engineering Nanodegree"
+        },
+        "stack": [
+            "React.js",
+            "Node.js",
+            "MySQL",
+            "Typescript"
+        ],
+        "links": {
+            "github": "",
+            "hosted": false
+        },
+        "images": [
+            {
+                "path": "/projects/udagram/home.png",
+                "alt": "Image showing the api callback of the Udagram web application."
+            }
+        ]
+    }
+]

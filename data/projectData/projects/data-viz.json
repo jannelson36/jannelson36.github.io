@@ -1,0 +1,34 @@
+{
+    "title": "Data Visualization",
+    "slug":"data-viz",
+    "overview": "A collection of projects focused on data visualization using powerful tools such as Matplotlib, Plotly, and Streamlit. By harnessing the capabilities of these libraries within a virtual environment, I created visually captivating and interactive representations of data.",
+    "type":"Data Analytics",
+    "timeline":{
+        "startDate":"10 Febuary 2022",
+        "endDate":"24 March 2023"
+    },
+    "associated":{
+        "name":"Personal Project"
+    },
+    "stack":[
+        "Python"
+    ],
+    "links":{
+        "github":"https://github.com/jannelson36/Data-Visualization",
+        "hosted":false
+    },
+    "images":[
+        {
+            "path":"/projects/data-viz/app.png",
+            "alt":"Analyzing the behavior of avocado prices and the number of avocados sold in the US between 2015 and 2018"
+        },
+        {
+            "path":"/projects/data-viz/streamy.png",
+            "alt":"Data examining GDP per Capita vs. Life Expectancy for different continents."
+        },
+        {
+            "path":"/projects/data-viz/titanic.png",
+            "alt":"A simple Titanic Dashboard"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "title":"Cloud",
+    "skills":[
+        {
+            "name":"Amazon AWS",
+            "icon":"AmazonwebservicesOriginal"
+        },
+        {
+            "name":"Github Actions",
+            "icon":"GithubOriginal"
+        }
+    ],
+    "index":7
+}
