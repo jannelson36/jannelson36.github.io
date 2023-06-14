@@ -81,6 +81,9 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./out
+      - name: CloudFlare DNS Management
+        uses: rez0n/actions-coudflare-dns@v2.2
+
 
   # Deployment job
   deploy:
