@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ProjectCard from "../ProjectCard";
+import ProjectCard from "../../ProjectCard";
 import Link from "next/link";
 
 function Projects({ projects }) {
