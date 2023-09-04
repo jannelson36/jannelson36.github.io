@@ -52,7 +52,7 @@ function Contact() {
                     }}
                     className="inline"
                 >
-                    Get in touch
+                    Ready for magic?
                 </motion.div>
                 <motion.div
                     initial={{
@@ -94,13 +94,7 @@ function Contact() {
                             delay: 0.6,
                         }}
                     >
-                        I&apos;m all ears and eager to hear from you! 
-                        Whether it&apos;s a thrilling new opportunity or a captivating project collaboration, 
-                        I&apos;m ready to dive in headfirst. 
-                        Don&apos;t hesitate to reach out and ping me with your questions 
-                        or simply to say hi. 
-                        I promise to go above and beyond to ensure I get back to you as soon as possible. 
-                        Let&apos;s embark on an exciting journey together and make magic happen!
+                        Reach out, connect, and let&apos;s create something amazing together! 🚀🌟
                     </motion.p>
                 </div>
                 <div className="flex justify-evenly items-start rounded-[5px] flex-wrap relative gap-4 mobile:flex-col tablet:flex-col laptop:flex-row desktop:flex-row bg-[#113030] w-full p-5 mobile:text-[1.5rem] tablet:text-[1.5rem] laptop:text-[1rem] desktop:text-[1rem]">

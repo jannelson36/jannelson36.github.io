@@ -25,7 +25,7 @@ function Skills({ skills }) {
                     }}
                     className="inline"
                 >
-                    My Prowess
+                My Skills
                 </motion.div>
                 <motion.div
                     initial={{

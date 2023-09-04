@@ -68,12 +68,10 @@ function About() {
                         }}
                     >
                         Hello there!  <br />
-                        I&apos;m Jan, a software developer extraordinaire driven by an 
-                        insatiable passion for creating innovative solutions. 
-                        From a young age, I was captivated by the world of technology, 
-                        constantly exploring and tinkering with software. 
-                        My creative spirit has evolved into a digital realm, 
-                        where I thrive in the world of software development.{" "}
+                        I&apos;m Jan, a passionate software developer with a lifelong fascination for technology. 
+                        My journey began in my youth, where I immersed myself in software exploration and innovation. 
+                        Today, I&apos;ve evolved into a software developer extraordinaire, 
+                        dedicated to crafting ingenious solutions.{" "}
                     </motion.p>
                     <br />
                     <motion.p
@@ -94,16 +92,14 @@ function About() {
                             delay: 0.6,
                         }}
                     >
-                        Over the years, my love for design 
-                        and problem-solving led me down the path of software development. 
-                        I specialize in crafting cutting-edge websites 
-                        and applications that not only boast visually stunning interfaces 
+                        My expertise lies in designing cutting-edge websites 
+                        and applications that not only dazzle with their aesthetics 
                         but also deliver seamless user experiences. 
-                        With my expertise in frameworks like{" "}
+                         Leveraging frameworks like{" "}
                         <span className="text-[#EBB700] font-bold">Next.js</span>,{" "}
                         <span className="text-[#EBB700] font-bold">React.js</span> and{" "}
-                        <span className="text-[#EBB700] font-bold">Node.js</span>, I bring ideas to life 
-                         with elegance and efficiency.{" "}
+                        <span className="text-[#EBB700] font-bold">Node.js</span>, I transform ideas 
+                        into elegant and efficient digital realities.{" "}
                     </motion.p>
                     <br />
                     <motion.p
@@ -124,20 +120,9 @@ function About() {
                             delay: 0.6,
                         }}
                     >
-                        But my skills go beyond just the front-end. 
-                        I have a firm grasp of the intricacies of {" "}
-                        <span className="text-[#EBB700] font-bold">
-                            object-oriented programming
-                        </span>
-                        ,{" "}
-                        <span className="text-[#EBB700] font-bold">
-                            data structures </span> and {" "}
-                        <span className="text-[#EBB700] font-bold">
-                            alogrithms
-                        </span>,{" "}
-                        allowing me to architect robust and scalable software solutions. 
-                        Whether it&apos;s tackling complex backend tasks or optimizing performance, 
-                        I thrive in delivering top-notch code that exceeds expectations.{" "}
+                        My skills extend beyond the frontend, 
+                        as I tackle complex backend challenges and optimize performance, 
+                        consistently delivering code that exceeds expectations.{" "}
                     </motion.p>
                     <br />
                     <motion.p
@@ -166,9 +151,21 @@ function About() {
                         <span className="text-[#EBB700] font-bold">Python</span>,{" "}
                         <span className="text-[#EBB700] font-bold">SQL</span>,{" "}
                         <span className="text-[#EBB700] font-bold">PHP</span>, and the{" "}
-                        <span className="text-[#EBB700] font-bold">Mighty Language &lsquo;C&rsquo;</span>.{" "}This 
+                        <span className="text-[#EBB700] font-bold">venerable &lsquo;C&rsquo;</span>.{" "}This 
                         breadth of knowledge empowers me to tackle diverse projects 
-                        with confidence and precision.{" "}
+                        with confidence and precision.
+                        
+                        
+                        
+                        As a versatile developer fluent in {" "}
+                        <span className="text-[#EBB700] font-bold">JavaScript</span>,{" "}
+                        <span className="text-[#EBB700] font-bold">TypeScript</span>,{" "}
+                        <span className="text-[#EBB700] font-bold">Java</span>,{" "}
+                        <span className="text-[#EBB700] font-bold">Python</span>,{" "}
+                        <span className="text-[#EBB700] font-bold">SQL</span>,{" "}
+                        <span className="text-[#EBB700] font-bold">PHP</span>, and the{" "}
+                        <span className="text-[#EBB700] font-bold">venerable &lsquo;C&rsquo; language</span>.{" "}, 
+                        I possess the breadth of knowledge needed to confidently handle diverse projects.{" "}
                     </motion.p>
                     <br />
                     <motion.p
@@ -189,13 +186,11 @@ function About() {
                             delay: 0.7,
                         }}
                     >
-                        Thank you for taking the time to explore my profile. 
-                        If you&apos;re seeking a dedicated and talented software developer 
-                        to join your team or collaborate on a project, 
-                        I&apos;m here and ready to make a significant impact. 
-                        Let&apos;s turn your ideas into reality 
-                        and build something truly remarkable together. 
-                        Don&apos;t hesitate to reach out—I&apos;m excited to connect with you!
+                        If you&apos;re looking for a dedicated and skilled software developer 
+                        to enhance your team or collaborate on a project, I&apos;m here, 
+                        ready to make a significant impact. 
+                        Let&apos;s transform your concepts into remarkable creations together—reach out, 
+                        and let&apos;s connect!
                     </motion.p>
                 </div>
                 <motion.div

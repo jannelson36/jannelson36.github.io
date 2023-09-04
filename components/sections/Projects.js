@@ -101,7 +101,7 @@ function Projects({ projects }) {
                 >
                     <Link
                         className="flex flex-row justify-center items-center border-solid border-[1px] border-[#174140] py-3 px-10 rounded-[8px]"
-                        href={"/projects"}
+                        href={"https://github.com/jannelson36?tab=repositories"}
                     >
                         {" "}
                         See all{" "}
