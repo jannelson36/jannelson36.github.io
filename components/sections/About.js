@@ -164,7 +164,7 @@ function About() {
                         <span className="text-[#EBB700] font-bold">Python</span>,{" "}
                         <span className="text-[#EBB700] font-bold">SQL</span>,{" "}
                         <span className="text-[#EBB700] font-bold">PHP</span>, and the{" "}
-                        <span className="text-[#EBB700] font-bold">venerable &lsquo;C&rsquo; language</span>.{" "}, 
+                        <span className="text-[#EBB700] font-bold">venerable &lsquo;C&rsquo; language</span>.{" "} 
                         I possess the breadth of knowledge needed to confidently handle diverse projects.{" "}
                     </motion.p>
                     <br />
