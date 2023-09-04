@@ -81,7 +81,7 @@ function Hamburger() {
                             >
                                 <Link
                                     className="text-[3rem] font-bold no-underline hover:scale-[200%]"
-                                    href="/projects"
+                                    href="https://github.com/jannelson36?tab=repositories"
                                 >
                                     Projects
                                 </Link>
