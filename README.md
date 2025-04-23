@@ -1,10 +1,10 @@
-# <h2>Hello, I'm Jan Nelson <img src="https://raw.githubusercontent.com/aemmadi/aemmadi/master/wave.gif" height="30px" width="30px"></h2>
+# <h2>Hello, I'm Nelson Ongiri <img src="https://raw.githubusercontent.com/aemmadi/aemmadi/master/wave.gif" height="30px" width="30px"></h2>
 
 ### [Live Site](https://jannelson.vercel.app/)
 
 ## Personal Portfolio 
  
-![Portfolio Website](https://i.ibb.co/WgPMpts/image.png) 
+![Portfolio Website](https://github.com/jannelson36/jannelson36/blob/main/Image00001.JPG) 
 
 <br>
 This is a code repository corresponding my Personal Development Portfolio. 
