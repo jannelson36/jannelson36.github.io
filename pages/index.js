@@ -5,6 +5,8 @@ import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
 import Contact from "@/components/sections/Contact";
+import GitHubStats from "@/components/GitHubStats";
+import DarkModeToggle from "@/components/DarkModeToggle";
 import { useEffect, useState } from "react";
 import Meta from "@/components/Meta";
 import useAxios from "@/hooks/useAxios";
@@ -60,14 +62,16 @@ export default function Home() {
     // ----------------------------------------------------------- END
 
     return (
-        <main>
+        <main className="bg-gray-900 min-h-screen">
             <Meta />
+            <DarkModeToggle />
             <Navigation />
             <Hero />
             <div className={styles.container}>
                 <About />
                 <Projects projects={projects} />
                 <Skills skills={skills} />
+                <GitHubStats username="jannelson36" />
                 <Contact />
             </div>
         </main>

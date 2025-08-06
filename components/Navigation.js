@@ -1,150 +1,270 @@
-import React, { useState } from "react";
-import DehazeIcon from "@mui/icons-material/Dehaze";
-import CloseIcon from "@mui/icons-material/Close";
-import { motion } from "framer-motion";
-import styles from "@/styles/index.module.css";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import HomeIcon from '@mui/icons-material/Home';
+import PersonIcon from '@mui/icons-material/Person';
+import WorkIcon from '@mui/icons-material/Work';
+import CodeIcon from '@mui/icons-material/Code';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
 
-function Hamburger() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+function Navigation() {
+    const [isOpen, setIsOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('hero');
+    const [scrolled, setScrolled] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+    const navItems = [
+        { name: 'Home', href: '#hero', icon: HomeIcon },
+        { name: 'About', href: '#aboutme', icon: PersonIcon },
+        { name: 'Projects', href: '#projects', icon: WorkIcon },
+        { name: 'Skills', href: '#skills', icon: CodeIcon },
+        { name: 'Contact', href: '#contact', icon: ContactMailIcon },
+    ];
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+
+            // Update active section based on scroll position
+            const sections = navItems.map(item => item.href.substring(1));
+            const currentSection = sections.find(section => {
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    return rect.top <= 100 && rect.bottom >= 100;
+                }
+                return false;
+            });
+
+            if (currentSection) {
+                setActiveSection(currentSection);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const smoothScroll = (e, href) => {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+            const offsetTop = target.offsetTop - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+        setIsOpen(false);
     };
 
-    if (typeof window !== "undefined") {
-        window.onscroll = () => {
-            if (scrollY < window.innerHeight) setIsMenuOpen(false);
-        };
-    }
+    const toggleMenu = () => setIsOpen(!isOpen);
 
     const menuVariants = {
-        open: {
-            height: "100vh",
-            transition: {
-                type: "spring",
-                stiffness: 200,
-                damping: 40,
-                mass: 0.8,
-                staggerChildren: 0.1,
-                delayChildren: 0.2,
-            },
-        },
         closed: {
-            height: 0,
+            opacity: 0,
+            x: "100%",
             transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 40,
-                mass: 0.8,
-                staggerChildren: 0.1,
-                staggerDirection: -1,
-            },
+                duration: 0.3,
+                ease: "easeInOut"
+            }
         },
+        open: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+                staggerChildren: 0.1,
+                delayChildren: 0.1
+            }
+        }
     };
 
-    const menuItemVariants = {
-        open: { y: 0, opacity: 1 },
-        closed: { y: -20, opacity: 0 },
+    const itemVariants = {
+        closed: { opacity: 0, x: 20 },
+        open: { opacity: 1, x: 0 }
     };
 
     return (
         <>
-            <motion.div
-                className="flex flex-col justify-start items-start absolute w-full h-[100vh] top-0 left-0 z-50 overflow-hidden bg-[#1c4f4ee0] backdrop-blur-lg"
-                variants={menuVariants}
-                initial="closed"
-                animate={isMenuOpen ? "open" : "closed"}
+            {/* Desktop & Mobile Navigation Bar */}
+            <motion.nav
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+                    scrolled 
+                        ? 'bg-gray-900/95 backdrop-blur-md border-b border-gray-700/50 shadow-lg' 
+                        : 'bg-transparent'
+                }`}
             >
-                <div>
-                    <div className={styles.container}>
-                        <div className="text-[#113030] mt-[60px] hover:cursor-pointer w-fit" onClick={toggleMenu}>
-                            <CloseIcon className="scale-[150%]" />
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="flex items-center justify-between h-16">
+                        {/* Logo */}
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            className="flex-shrink-0"
+                        >
+                            <Link href="#hero" onClick={(e) => smoothScroll(e, '#hero')}>
+                                <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                                    JN
+                                </span>
+                            </Link>
+                        </motion.div>
+
+                        {/* Desktop Navigation */}
+                        <div className="hidden md:block">
+                            <div className="flex items-center space-x-1">
+                                {navItems.map((item, index) => (
+                                    <motion.div
+                                        key={item.name}
+                                        initial={{ opacity: 0, y: -20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: index * 0.1 + 0.3 }}
+                                    >
+                                        <Link
+                                            href={item.href}
+                                            onClick={(e) => smoothScroll(e, item.href)}
+                                            className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 group ${
+                                                activeSection === item.href.substring(1)
+                                                    ? 'text-white bg-blue-500/20'
+                                                    : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                                            }`}
+                                        >
+                                            {item.name}
+                                            {activeSection === item.href.substring(1) && (
+                                                <motion.div
+                                                    layoutId="activeSection"
+                                                    className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg border border-blue-500/30"
+                                                    initial={false}
+                                                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                                />
+                                            )}
+                                        </Link>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Mobile Menu Button */}
+                        <div className="md:hidden">
+                            <motion.button
+                                whileTap={{ scale: 0.95 }}
+                                onClick={toggleMenu}
+                                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 transition-colors duration-200"
+                            >
+                                {isOpen ? (
+                                    <CloseIcon className="h-6 w-6" />
+                                ) : (
+                                    <MenuIcon className="h-6 w-6" />
+                                )}
+                            </motion.button>
                         </div>
                     </div>
-                    <div className={styles.container}>
-                        <motion.div className="flex flex-col justify-center items-start">
-                            <motion.div
-                                className="mb-4 text-center"
-                                variants={menuItemVariants}
-                            >
-                                <a
-                                    className="text-[3rem] font-bold no-underline hover:scale-[200%]"
-                                    href="#aboutme"
-                                >
-                                    About me
-                                </a>
-                            </motion.div>
-                            <motion.div
-                                className="mb-4 text-center"
-                                variants={menuItemVariants}
-                            >
-                                <Link
-                                    className="text-[3rem] font-bold no-underline hover:scale-[200%]"
-                                    href="https://github.com/jannelson36?tab=repositories"
-                                >
-                                    Projects
-                                </Link>
-                            </motion.div>
-                            <motion.div
-                                className="mb-4 text-center"
-                                variants={menuItemVariants}
-                            >
-                                <a
-                                    className="text-[3rem] font-bold no-underline hover:scale-[200%]"
-                                    href="#skills"
-                                >
-                                    Skills
-                                </a>
-                            </motion.div>
-                            {/* <motion.div
-                                className="mb-4 text-center"
-                                variants={menuItemVariants}
-                            >
-                                <a
-                                    className="text-[3rem] font-bold no-underline hover:scale-[200%]"
-                                    href="#blogs"
-                                >
-                                    Blogs
-                                </a>
-                            </motion.div> */}
-                            <motion.div
-                                className="mb-4 text-center"
-                                variants={menuItemVariants}
-                            >
-                                <a
-                                    className="text-[3rem] font-bold no-underline hover:scale-[200%]"
-                                    href="#getintouch"
-                                >
-                                    Get in Touch
-                                </a>
-                            </motion.div>
-                        </motion.div>
-                    </div>
                 </div>
-            </motion.div>
+            </motion.nav>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isOpen && (
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 md:hidden"
+                            onClick={toggleMenu}
+                        />
+
+                        {/* Mobile Menu */}
+                        <motion.div
+                            variants={menuVariants}
+                            initial="closed"
+                            animate="open"
+                            exit="closed"
+                            className="fixed top-0 right-0 h-full w-80 bg-gray-900/95 backdrop-blur-md border-l border-gray-700/50 z-50 md:hidden"
+                        >
+                            <div className="flex flex-col h-full">
+                                {/* Header */}
+                                <div className="flex items-center justify-between p-6 border-b border-gray-700/50">
+                                    <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                                        Navigation
+                                    </span>
+                                    <motion.button
+                                        whileTap={{ scale: 0.95 }}
+                                        onClick={toggleMenu}
+                                        className="p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 transition-colors duration-200"
+                                    >
+                                        <CloseIcon className="h-6 w-6" />
+                                    </motion.button>
+                                </div>
+
+                                {/* Navigation Items */}
+                                <nav className="flex-1 px-6 py-8">
+                                    <div className="space-y-2">
+                                        {navItems.map((item, index) => {
+                                            const Icon = item.icon;
+                                            return (
+                                                <motion.div
+                                                    key={item.name}
+                                                    variants={itemVariants}
+                                                >
+                                                    <Link
+                                                        href={item.href}
+                                                        onClick={(e) => smoothScroll(e, item.href)}
+                                                        className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 group ${
+                                                            activeSection === item.href.substring(1)
+                                                                ? 'text-white bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30'
+                                                                : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                                                        }`}
+                                                    >
+                                                        <Icon className="h-5 w-5" />
+                                                        <span>{item.name}</span>
+                                                        {activeSection === item.href.substring(1) && (
+                                                            <motion.div
+                                                                className="ml-auto w-2 h-2 bg-blue-400 rounded-full"
+                                                                initial={{ scale: 0 }}
+                                                                animate={{ scale: 1 }}
+                                                                transition={{ type: "spring", bounce: 0.5 }}
+                                                            />
+                                                        )}
+                                                    </Link>
+                                                </motion.div>
+                                            );
+                                        })}
+                                    </div>
+                                </nav>
+
+                                {/* Footer */}
+                                <div className="p-6 border-t border-gray-700/50">
+                                    <p className="text-sm text-gray-400 text-center">
+                                        © 2024 Jannelson Portfolio
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
+
+            {/* Scroll Progress Indicator */}
             <motion.div
-                initial={{
-                    opacity: 0.2,
-                    y: -40,
-                    color: "#174140"
+                className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 z-50 origin-left"
+                style={{
+                    scaleX: scrolled ? 1 : 0,
                 }}
-                animate={{
-                    opacity: 1,
-                    y: 0,
-                    color: "#174140"
+                initial={{ scaleX: 0 }}
+                animate={{ 
+                    scaleX: typeof window !== 'undefined' ? window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) : 0 
                 }}
-                transition={{
-                    duration: 2,
-                    delay: 0,
-                    type: "spring",
-                }}
-                // className="text-[#350078]"
-            >
-                <DehazeIcon onClick={toggleMenu} className="mobile:scale-[200%] tablet:scale-[200%] laptop:scale-[150%] desktop:scale-[150%] rotate-90 mobile:absolute tablet:absolute laptop:static desktop:static mt-[60px] mobile:mx-[20px] tablet:mx-[40px] laptop:mx-[50px] desktop:mx-[50px] hover:cursor-pointer" />
-            </motion.div>
+                transition={{ duration: 0.1 }}
+            />
         </>
     );
 }
 
-export default Hamburger;
+export default Navigation;
