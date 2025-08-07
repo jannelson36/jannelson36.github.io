@@ -20,7 +20,7 @@ export default function Home({ projects: initialProjects, skills: initialSkills 
     const [skills, setSkills] = useState(initialSkills || []);
 
     return (
-        <main className="bg-gray-900 min-h-screen">
+        <main className="pt-16 min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
             <Meta />
             <DarkModeToggle />
             <Navigation />

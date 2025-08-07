@@ -1,5 +1,4 @@
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import styles from "../../styles/index.module.css";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
@@ -10,33 +9,8 @@ import Link from "next/link";
 import allProjects from "../../data/projectData/index.json";
 import Meta from "@/components/Meta";
 import HomeOutlinedIcon from "@mui/icons-material/HomeRounded";
-import useAxios from "@/hooks/useAxios";
-import LoaderFS from "@/components/Loaders/Loader-FS";
 
-function SlugPage() {
-    const router = useRouter();
-    const [projectDetails, setProjectDetails] = useState([]);
-    const [slug, setSlug] = useState("");
-    const [loading, setLoading] = useState(false);
-
-    const projectData = useAxios({
-        method: "get",
-        url: `/api/getProject?slug=${slug}`,
-        headers: JSON.stringify({ accept: "*/*" }),
-    });
-
-    useEffect(() => {
-        if (!router.isReady) return;
-
-        setLoading(true);
-        setSlug(router.query.slug);
-
-        if (projectData.response !== null) {
-            setProjectDetails(projectData.response);
-            setLoading(false)
-        }
-    }, [router.isReady, router.query, projectData]);
-
+function SlugPage({ projectDetails }) {
     return (
         <>
             <Meta
@@ -76,14 +50,14 @@ function SlugPage() {
                             </div>
                             <div className="flex flex-row justify-between items-center gap-5">
                                 <div className="mobile:hidden tablet:hidden laptop:block desktop:block">
-                                    <Link href={"/"}>
+                                    <Link href={'/'}>
                                         <HomeOutlinedIcon className="text-[2rem]" />
                                     </Link>
                                 </div>
                                 <div>
                                     <Link
                                         className="flex flex-row justify-center items-center flex-nowrap border-solid border-[1px] border-[#350078] rounded-[8px] mobile:text-[0.85rem] tablet:text-[1rem] laptop:text-[1rem] desktop:text-[1rem] mobile:py-1 mobile:px-4 tablet:py-3 tablet:px-10 laptop:py-3 laptop:px-10 desktop:py-3 desktop:px-10"
-                                        href={"/projects"}
+                                        href={'/projects'}
                                     >
                                         {" "}
                                         <span>All</span>
@@ -421,25 +395,23 @@ function SlugPage() {
                     </div>
                 </div>
             </div>
-            
-            {loading && <LoaderFS />}
         </>
     );
 }
 
 export default SlugPage;
 
-// function getProjectDetails(slug) {
-//     fetch(`/api/getProject?slug=${slug}`, {
-//         credentials: "same-origin",
-//         mode: "cors",
-//         method: "GET",
-//         headers: {
-//             "Content-Type": "application/json",
-//         },
-//     })
-//         .then((projects) => projects.json())
-//         .then((projects) => {
-//             if (projects) setProjectDetails(projects);
-//         });
-// }
+export async function getServerSideProps(context) {
+    const { slug } = context.params;
+    const project = allProjects.find((p) => p.repo_name === slug) || null;
+
+    if (!project) {
+        return { notFound: true };
+    }
+
+    return {
+        props: {
+            projectDetails: project
+        }
+    };
+}
