@@ -6,6 +6,21 @@ import allProjects from "@/data/projectData/index.json";
 import HomeOutlinedIcon from "@mui/icons-material/HomeRounded";
 import Link from "next/link";
 import Meta from "@/components/Meta";
+import { getGitHubOgImageUrl } from "@/hooks/useAxios";
+
+function toRepoFullName(project) {
+    const gh = project?.links?.github || "";
+    try {
+        if (gh.includes("github.com")) {
+            const parts = gh.replace(/\.git$/, "").split("github.com/")[1].split("/");
+            const owner = parts[0];
+            const repo = parts[1];
+            if (owner && repo) return `${owner}/${repo}`;
+        }
+    } catch {}
+    // fallback to owner's username with repo_name
+    return `jannelson36/${project.repo_name}`;
+}
 
 function ProjectsPage({ projects }) {
     return (
@@ -27,7 +42,7 @@ function ProjectsPage({ projects }) {
                             </Link>
                         </div>
                     </div>
-                    <div className="flex flex-row justify-center items-center flex-wrap gap-5 mobile:mt-[2rem] tablet:mt-[2rem] laptop:mt-[5rem] desktop:mt-[5rem]">
+                    <div className="flex flex-row justify-center items-stretch flex-wrap gap-5 mobile:mt-[2rem] tablet:mt-[2rem] laptop:mt-[5rem] desktop:mt-[5rem]">
                         {
                             projects?.map((project, i) => (
                                 <motion.div
@@ -55,6 +70,7 @@ function ProjectsPage({ projects }) {
                                         stack={project.stack}
                                         overview={project.overview}
                                         links={project.links}
+                                        imageUrl={project.ogImage || null}
                                         key={i}
                                     />
                                 </motion.div>
@@ -98,7 +114,10 @@ function ProjectsPage({ projects }) {
 export default ProjectsPage;
 
 export async function getStaticProps() {
-    const projects = allProjects.map((project) => project);
+    const projects = allProjects.map((project) => {
+        const repoFull = toRepoFullName(project);
+        return { ...project, ogImage: getGitHubOgImageUrl(repoFull) };
+    });
     return {
         props: { projects }
     };

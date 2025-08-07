@@ -293,7 +293,7 @@ function Projects({ projects }) {
 
     return (
         <section id="projects" className="py-20 bg-gradient-to-b from-black to-gray-900">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <motion.div
                     ref={ref}
                     variants={containerVariants}
@@ -325,7 +325,7 @@ function Projects({ projects }) {
                 >
                     <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
                         {/* Search Bar */}
-                        <motion.div variants={itemVariants} className="relative flex-1 max-w-md">
+                        <motion.div variants={itemVariants} className="relative w-full max-w-sm md:max-w-md">
                             <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                             <input
                                 type="text"
@@ -359,8 +359,9 @@ function Projects({ projects }) {
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
                 >
                     {filteredProjects && filteredProjects.length > 0 ? (
                         filteredProjects.map((project, index) => (

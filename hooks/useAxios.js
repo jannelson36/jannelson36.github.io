@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 // axios.defaults.baseURL = "https://portfolio.vercel.app/api/";
@@ -6,7 +6,8 @@ import axios from "axios";
 const useAxios = ({ url, method, body = null, headers = null }) => {
     const [response, setResponse] = useState(null);
     const [error, setError] = useState("");
-    
+    const [loading, setLoading] = useState(false);
+
     useEffect(() => {
         fetchData();
     }, [method, url, body, headers]);
@@ -17,17 +18,19 @@ const useAxios = ({ url, method, body = null, headers = null }) => {
             JSON.parse(body)
         ).then((res) => {
             setResponse(res.data);
-        })
-        .catch((err) => {
+        }).catch((err) => {
             setError(err);
-        })
-        .finally(() => {});
+        }).finally(() => {
+            setLoading(false);
+        });
     };
 
-    return {
-        response,
-        error
-    };
+    return { response, error, loading };
 };
 
 export default useAxios;
+
+export function getGitHubOgImageUrl(repoFullName) {
+    if (!repoFullName) return null;
+    return `https://opengraph.githubassets.com/1/${repoFullName}`;
+}
