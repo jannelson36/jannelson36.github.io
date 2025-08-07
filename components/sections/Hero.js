@@ -86,7 +86,7 @@ function Hero() {
     };
 
     return (
-        <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+        <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 pt-24">
             {/* Animated Background Particles */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute -inset-10 opacity-50">

@@ -14,7 +14,17 @@ const DarkModeToggle = () => {
         if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
             setIsDark(true);
             document.documentElement.classList.add('dark');
+        } else {
+            setIsDark(false);
+            document.documentElement.classList.remove('dark');
         }
+
+        // Listen for changes to the class externally (e.g., system theme change)
+        const observer = new MutationObserver(() => {
+            setIsDark(document.documentElement.classList.contains('dark'));
+        });
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+        return () => observer.disconnect();
     }, []);
 
     const toggleDarkMode = () => {
