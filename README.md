@@ -4,7 +4,7 @@
 
 ## Personal Portfolio 
  
-![Portfolio Website](https://github.com/jannelson36/jannelson36/blob/main/Image00001.JPG) 
+![Portfolio Website](https://github.com/jannelson36/jannelson36.github.io/blob/main/public/re.png) 
 
 <br>
 This is a code repository corresponding my Personal Development Portfolio. 
