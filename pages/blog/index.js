@@ -28,7 +28,7 @@ export default function BlogIndex({ posts }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const files = fs.existsSync(BLOG_DIR) ? fs.readdirSync(BLOG_DIR) : [];
   const posts = files
     .filter((file) => file.endsWith('.mdx') || file.endsWith('.md'))
@@ -36,9 +36,10 @@ export async function getServerSideProps() {
       const slug = file.replace(/\.(mdx|md)$/i, '');
       const content = fs.readFileSync(path.join(BLOG_DIR, file), 'utf-8');
       const { data } = matter(content);
-      return { slug, frontMatter: data };
+      const frontMatter = { ...data, date: data.date ? String(data.date) : '' };
+      return { slug, frontMatter };
     })
-    .sort((a, b) => (new Date(b.frontMatter.date) - new Date(a.frontMatter.date)));
+    .sort((a, b) => (new Date(a.frontMatter.date) < new Date(b.frontMatter.date) ? 1 : -1));
 
   return { props: { posts } };
 }

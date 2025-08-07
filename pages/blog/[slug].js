@@ -20,14 +20,17 @@ export default function BlogPost({ source, frontMatter }) {
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  const files = fs.existsSync(BLOG_DIR) ? fs.readdirSync(BLOG_DIR) : [];
+  const paths = files
+    .filter((file) => file.endsWith('.mdx') || file.endsWith('.md'))
+    .map((file) => ({ params: { slug: file.replace(/\.(mdx|md)$/i, '') } }));
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
   const filePath = path.join(BLOG_DIR, `${params.slug}.mdx`);
   const altPath = path.join(BLOG_DIR, `${params.slug}.md`);
-  const exists = fs.existsSync(filePath) || fs.existsSync(altPath);
-
-  if (!exists) {
-    return { notFound: true };
-  }
   const chosenPath = fs.existsSync(filePath) ? filePath : altPath;
   const raw = fs.readFileSync(chosenPath, 'utf-8');
   const { content, data } = matter(raw);
@@ -36,7 +39,7 @@ export async function getServerSideProps({ params }) {
   return {
     props: {
       source: mdxSource,
-      frontMatter: { ...data, slug: params.slug }
+      frontMatter: { ...data, slug: params.slug, date: data.date ? String(data.date) : '' }
     }
   };
 }

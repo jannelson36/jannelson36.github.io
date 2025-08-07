@@ -97,8 +97,7 @@ function ProjectsPage({ projects }) {
 
 export default ProjectsPage;
 
-export async function getServerSideProps() {
-    // Simulate SSR data fetch; in real app, fetch from API/DB
+export async function getStaticProps() {
     const projects = allProjects.map((project) => project);
     return {
         props: { projects }

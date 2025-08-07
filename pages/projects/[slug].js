@@ -401,17 +401,15 @@ function SlugPage({ projectDetails }) {
 
 export default SlugPage;
 
-export async function getServerSideProps(context) {
-    const { slug } = context.params;
-    const project = allProjects.find((p) => p.repo_name === slug) || null;
+export async function getStaticPaths() {
+    const paths = allProjects.map((p) => ({ params: { slug: p.repo_name } }));
+    return { paths, fallback: false };
+}
 
+export async function getStaticProps({ params }) {
+    const project = allProjects.find((p) => p.repo_name === params.slug) || null;
     if (!project) {
         return { notFound: true };
     }
-
-    return {
-        props: {
-            projectDetails: project
-        }
-    };
+    return { props: { projectDetails: project } };
 }
