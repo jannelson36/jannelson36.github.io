@@ -1,0 +1,228 @@
+'use client'
+
+import { useState, useEffect, useMemo } from 'react'
+import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, Close, Home, Person, Work, Code, ContactMail } from '@mui/icons-material'
+
+const navItems = [
+  { name: 'Home', href: '#hero', icon: Home },
+  { name: 'About', href: '#about', icon: Person },
+  { name: 'Projects', href: '#projects', icon: Work },
+  { name: 'Skills', href: '#skills', icon: Code },
+  { name: 'Contact', href: '#contact', icon: ContactMail },
+]
+
+export default function Navigation() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('hero')
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+
+      const sections = navItems.map(item => item.href.substring(1))
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          return rect.top <= 100 && rect.bottom >= 100
+        }
+        return false
+      })
+
+      if (currentSection) {
+        setActiveSection(currentSection)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const smoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const target = document.querySelector(href)
+    if (target) {
+      const offsetTop = target.getBoundingClientRect().top + window.scrollY - 80
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      })
+    }
+    setIsOpen(false)
+  }
+
+  const toggleMenu = () => setIsOpen(!isOpen)
+
+  return (
+    <>
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          scrolled 
+            ? 'bg-gray-900/95 backdrop-blur-md border-b border-gray-700/50 shadow-lg' 
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between h-16">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex-shrink-0"
+            >
+              <Link href="#hero" onClick={(e) => smoothScroll(e, '#hero')}>
+                <span className="text-2xl font-bold gradient-text">
+                  JN
+                </span>
+              </Link>
+            </motion.div>
+
+            <div className="hidden md:block">
+              <div className="flex items-center space-x-1">
+                {navItems.map((item, index) => (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 + 0.3 }}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={(e) => smoothScroll(e, item.href)}
+                      className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 group ${
+                        activeSection === item.href.substring(1)
+                          ? 'text-white bg-blue-500/20'
+                          : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                      }`}
+                    >
+                      {item.name}
+                      {activeSection === item.href.substring(1) && (
+                        <motion.div
+                          layoutId="activeSection"
+                          className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg border border-blue-500/30"
+                          initial={false}
+                          transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                        />
+                      )}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <div className="md:hidden">
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                onClick={toggleMenu}
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 transition-colors duration-200"
+              >
+                {isOpen ? (
+                  <Close className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </motion.button>
+            </div>
+          </div>
+        </div>
+      </motion.nav>
+
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 md:hidden"
+              onClick={toggleMenu}
+            />
+
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.3 }}
+              className="fixed top-0 right-0 h-full w-80 bg-gray-900/95 backdrop-blur-md border-l border-gray-700/50 z-50 md:hidden"
+            >
+              <div className="flex flex-col h-full">
+                <div className="flex items-center justify-between p-6 border-b border-gray-700/50">
+                  <span className="text-xl font-bold gradient-text">
+                    Navigation
+                  </span>
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    onClick={toggleMenu}
+                    className="p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 transition-colors duration-200"
+                  >
+                    <Close className="h-6 w-6" />
+                  </motion.button>
+                </div>
+
+                <nav className="flex-1 px-6 py-8">
+                  <div className="space-y-2">
+                    {navItems.map((item, index) => {
+                      const Icon = item.icon
+                      return (
+                        <motion.div
+                          key={item.name}
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                        >
+                          <Link
+                            href={item.href}
+                            onClick={(e) => smoothScroll(e, item.href)}
+                            className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 group ${
+                              activeSection === item.href.substring(1)
+                                ? 'text-white bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30'
+                                : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                            }`}
+                          >
+                            <Icon className="h-5 w-5" />
+                            <span>{item.name}</span>
+                            {activeSection === item.href.substring(1) && (
+                              <motion.div
+                                className="ml-auto w-2 h-2 bg-blue-400 rounded-full"
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ type: "spring", bounce: 0.5 }}
+                              />
+                            )}
+                          </Link>
+                        </motion.div>
+                      )
+                    })}
+                  </div>
+                </nav>
+
+                <div className="p-6 border-t border-gray-700/50">
+                  <p className="text-sm text-gray-400 text-center">
+                    © 2024 Jannelson Portfolio
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 z-50 origin-left"
+        style={{
+          scaleX: scrolled ? 1 : 0,
+        }}
+        initial={{ scaleX: 0 }}
+        animate={{ 
+          scaleX: typeof window !== 'undefined' ? window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) : 0 
+        }}
+        transition={{ duration: 0.1 }}
+      />
+    </>
+  )
+}

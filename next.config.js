@@ -1,11 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  trailingSlash: true,
-  images: {
-    unoptimized: true
+  experimental: {
+    mdxRs: true,
   },
-  // No basePath needed for username.github.io sites
+  images: {
+    domains: ['github.com', 'avatars.githubusercontent.com'],
+  },
+  compress: true,
+  poweredByHeader: false,
+  reactStrictMode: true,
+  swcMinify: true,
 }
 
 module.exports = nextConfig
