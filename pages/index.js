@@ -7,59 +7,17 @@ import Skills from "@/components/sections/Skills";
 import Contact from "@/components/sections/Contact";
 import GitHubStats from "@/components/GitHubStats";
 import DarkModeToggle from "@/components/DarkModeToggle";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Meta from "@/components/Meta";
-import useAxios from "@/hooks/useAxios";
 
-// UNCOMMENT IF READING FILES LOCALLY
-// import allProjects from "../data/projectData/index.json";
-// import allSkills from "../data/skillData/index.json";
+// Import data directly for static export
+import allProjects from "../data/projectData/index.json";
+import allSkills from "../data/skillData/index.json";
 
-export default function Home() {
-
+export default function Home({ projects: initialProjects, skills: initialSkills }) {
     // STATES
-    const [projects, setProjects] = useState([]);
-    const [skills, setSkills] = useState([]);
-
-    // -------------- CODE TO GET DATA OVER API ----------------- START
-    
-    const projectData = useAxios({
-        method: 'get',
-        url: '/api/getProjects',
-        headers: JSON.stringify({ accept: '*/*' }),
-    });
-    const skillData = useAxios({
-        method: 'get',
-        url: '/api/getSkills',
-        headers: JSON.stringify({ accept: '*/*' }),
-    });
-    
-    
-    useEffect(() => {
-        if (projectData.response !== null) setProjects(projectData.response);
-        if(projectData.error) console.log(projectData.error)
-        if (skillData.response !== null) setSkills(skillData.response);
-        if(skillData.error) console.log(skillData.error)
-    }, [projectData, skillData]);
-
-    // ----------------------------------------------------------- END
-
-
-    // -------------- CODE TO READ FILES LOCALLY ----------------- START
-
-    // useEffect(() => {
-    //     getAllProjects();
-    //     getAllSkills();
-    // }, []);
-    
-    // const getAllProjects = () => {
-    //     setProjects(allProjects.map((project) => project));
-    // };
-    // const getAllSkills = () => {
-    //     setSkills(allSkills.sort((a, b) => a.index - b.index).map((skill) => skill));
-    // };
-
-    // ----------------------------------------------------------- END
+    const [projects, setProjects] = useState(initialProjects || []);
+    const [skills, setSkills] = useState(initialSkills || []);
 
     return (
         <main className="bg-gray-900 min-h-screen">
@@ -76,4 +34,24 @@ export default function Home() {
             </div>
         </main>
     );
+}
+
+// Static props for static export
+export async function getStaticProps() {
+    try {
+        return {
+            props: {
+                projects: allProjects || [],
+                skills: allSkills.sort((a, b) => a.index - b.index) || []
+            }
+        };
+    } catch (error) {
+        console.error('Error loading data:', error);
+        return {
+            props: {
+                projects: [],
+                skills: []
+            }
+        };
+    }
 }
