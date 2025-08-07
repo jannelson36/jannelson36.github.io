@@ -7,6 +7,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import LaunchIcon from '@mui/icons-material/Launch';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import Image from 'next/image';
 
 function Projects({ projects }) {
     const [filteredProjects, setFilteredProjects] = useState(projects || []);
@@ -132,9 +133,11 @@ function Projects({ projects }) {
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                             {project.images.map((image, index) => (
                                                 <div key={index} className="rounded-lg overflow-hidden bg-gray-800">
-                                                    <img
+                                                    <Image
                                                         src={image.path}
                                                         alt={image.alt}
+                                                        width={400}
+                                                        height={200}
                                                         className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
                                                     />
                                                 </div>
@@ -213,10 +216,11 @@ function Projects({ projects }) {
                 {/* Project Image */}
                 <div className="relative h-48 bg-gradient-to-br from-blue-500/20 to-purple-500/20 overflow-hidden">
                     {project.images && project.images[0] ? (
-                        <img
+                        <Image
                             src={project.images[0].path}
                             alt={project.images[0].alt}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            fill
+                            className="object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                     ) : (
                         <div className="w-full h-full flex items-center justify-center text-6xl">

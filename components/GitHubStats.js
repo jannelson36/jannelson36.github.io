@@ -16,53 +16,53 @@ const GitHubStats = ({ username = 'jannelson36' }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetchGitHubStats();
-    }, [username]);
+        const fetchGitHubStats = async () => {
+            try {
+                setLoading(true);
+                
+                // Fetch user data
+                const userResponse = await fetch(`https://api.github.com/users/${username}`);
+                const userData = await userResponse.json();
 
-    const fetchGitHubStats = async () => {
-        try {
-            setLoading(true);
-            
-            // Fetch user data
-            const userResponse = await fetch(`https://api.github.com/users/${username}`);
-            const userData = await userResponse.json();
+                // Fetch repositories data
+                const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+                const reposData = await reposResponse.json();
 
-            // Fetch repositories data
-            const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
-            const reposData = await reposResponse.json();
+                if (userResponse.ok && reposResponse.ok) {
+                    const totalStars = reposData.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+                    const totalForks = reposData.reduce((sum, repo) => sum + repo.forks_count, 0);
 
-            if (userResponse.ok && reposResponse.ok) {
-                const totalStars = reposData.reduce((sum, repo) => sum + repo.stargazers_count, 0);
-                const totalForks = reposData.reduce((sum, repo) => sum + repo.forks_count, 0);
-
-                setStats({
-                    publicRepos: userData.public_repos,
-                    totalStars,
-                    totalForks,
-                    followers: userData.followers
-                });
-            } else {
-                // Fallback data if API fails
+                    setStats({
+                        publicRepos: userData.public_repos,
+                        totalStars,
+                        totalForks,
+                        followers: userData.followers
+                    });
+                } else {
+                    // Fallback data if API fails
+                    setStats({
+                        publicRepos: 25,
+                        totalStars: 150,
+                        totalForks: 45,
+                        followers: 80
+                    });
+                }
+            } catch (err) {
+                setError('Failed to fetch GitHub stats');
+                // Fallback data
                 setStats({
                     publicRepos: 25,
                     totalStars: 150,
                     totalForks: 45,
                     followers: 80
                 });
+            } finally {
+                setLoading(false);
             }
-        } catch (err) {
-            setError('Failed to fetch GitHub stats');
-            // Fallback data
-            setStats({
-                publicRepos: 25,
-                totalStars: 150,
-                totalForks: 45,
-                followers: 80
-            });
-        } finally {
-            setLoading(false);
-        }
-    };
+        };
+
+        fetchGitHubStats();
+    }, [username]);
 
     const AnimatedCounter = ({ value, duration = 2000 }) => {
         const [count, setCount] = useState(0);

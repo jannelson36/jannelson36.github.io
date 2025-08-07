@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -11,13 +11,13 @@ function Hero() {
     const [typedText, setTypedText] = useState("");
     const [currentRole, setCurrentRole] = useState(0);
     
-    const roles = [
+    const roles = useMemo(() => [
         "Full Stack Developer",
         "Software Engineer", 
         "Problem Solver",
         "Tech Enthusiast",
         "Code Architect"
-    ];
+    ], []);
 
     // Typing animation effect
     useEffect(() => {
@@ -48,7 +48,7 @@ function Hero() {
         }, 100);
 
         return () => clearInterval(typeTimer);
-    }, [currentRole]);
+    }, [currentRole, roles]);
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -128,7 +128,7 @@ function Hero() {
                         variants={itemVariants}
                         className="text-gray-300 text-lg font-medium mb-4"
                     >
-                        👋 Hello, I'm
+                        👋 Hello, I&apos;m
                     </motion.div>
                     
                     <motion.h1
@@ -149,7 +149,7 @@ function Hero() {
                         variants={itemVariants}
                         className="text-gray-300 text-lg leading-relaxed mb-8 max-w-2xl"
                     >
-                        I'm a passionate software engineer who loves building innovative solutions 
+                        I&apos;m a passionate software engineer who loves building innovative solutions 
                         and bringing ideas to life through code. I specialize in creating scalable 
                         applications with modern technologies and best practices.
                     </motion.p>

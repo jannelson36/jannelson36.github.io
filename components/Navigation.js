@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -14,13 +14,13 @@ function Navigation() {
     const [activeSection, setActiveSection] = useState('hero');
     const [scrolled, setScrolled] = useState(false);
 
-    const navItems = [
+    const navItems = useMemo(() => [
         { name: 'Home', href: '#hero', icon: HomeIcon },
         { name: 'About', href: '#aboutme', icon: PersonIcon },
         { name: 'Projects', href: '#projects', icon: WorkIcon },
         { name: 'Skills', href: '#skills', icon: CodeIcon },
         { name: 'Contact', href: '#contact', icon: ContactMailIcon },
-    ];
+    ], []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -44,7 +44,7 @@ function Navigation() {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [navItems]);
 
     const smoothScroll = (e, href) => {
         e.preventDefault();

@@ -172,7 +172,7 @@ function Contact() {
                         </motion.div>
                         <h2 className="text-3xl font-bold text-white mb-4">Thank You!</h2>
                         <p className="text-gray-300 text-lg mb-8">
-                            Your message has been sent successfully. I'll get back to you as soon as possible!
+                            Your message has been sent successfully. I&apos;ll get back to you as soon as possible!
                         </p>
                         <button
                             onClick={() => setIsSubmitted(false)}
@@ -206,7 +206,7 @@ function Contact() {
                         variants={itemVariants}
                         className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed"
                     >
-                        I'm always interested in new opportunities and collaborations. 
+                        I&apos;m always interested in new opportunities and collaborations. 
                         Whether you have a project in mind or just want to chat about technology, feel free to reach out!
                     </motion.p>
                 </motion.div>
@@ -280,7 +280,7 @@ function Contact() {
                                 <span className="text-green-400 font-medium">Available for work</span>
                             </div>
                             <p className="text-gray-300 text-sm">
-                                Currently accepting new projects and opportunities. Let's build something amazing together!
+                                Currently accepting new projects and opportunities. Let&apos;s build something amazing together!
                             </p>
                         </motion.div>
                     </motion.div>

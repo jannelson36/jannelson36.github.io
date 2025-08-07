@@ -157,8 +157,8 @@ function Skills({ skills }) {
                         variants={itemVariants}
                         className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed"
                     >
-                        I'm passionate about learning new technologies and constantly improving my skills. 
-                        Here's a breakdown of my technical expertise and proficiency levels.
+                        I&apos;m passionate about learning new technologies and constantly improving my skills. 
+                        Here&apos;s a breakdown of my technical expertise and proficiency levels.
                     </motion.p>
                 </motion.div>
 
