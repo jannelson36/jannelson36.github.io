@@ -133,7 +133,7 @@ function Hero() {
                     
                     <motion.h1
                         variants={itemVariants}
-                        className="text-5xl laptop:text-7xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                        className="text-5xl laptop:text-7xl font-bold mb-4 bg-gradient-to-r from-slate-800 via-slate-600 to-slate-700 dark:from-blue-400 dark:via-indigo-400 dark:to-sky-400 bg-clip-text text-transparent"
                     >
                         Jannelson
                     </motion.h1>
@@ -161,7 +161,7 @@ function Hero() {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                            className="px-8 py-3 font-semibold rounded-full transition-all duration-300 bg-white/60 dark:bg-white/10 text-gray-800 dark:text-white border border-white/40 dark:border-white/10 backdrop-blur-md hover:shadow-xl"
                         >
                             <Link href="#projects" className="flex items-center gap-2">
                                 View My Work
@@ -171,7 +171,7 @@ function Hero() {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-8 py-3 border-2 border-purple-500 text-purple-400 font-semibold rounded-full hover:bg-purple-500 hover:text-white transition-all duration-300"
+                            className="px-8 py-3 font-semibold rounded-full transition-all duration-300 bg-white/60 dark:bg-white/10 text-gray-800 dark:text-white border border-white/40 dark:border-white/10 backdrop-blur-md hover:shadow-xl"
                         >
                             <Link href="#contact" className="flex items-center gap-2">
                                 <EmailIcon className="w-5 h-5" />
@@ -224,12 +224,12 @@ function Hero() {
                 >
                     <div className="relative">
                         {/* Glowing background circle */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+                        <div className="absolute inset-0 rounded-full blur-2xl opacity-40 animate-pulse bg-white/50 dark:bg-white/10"></div>
                         
                         {/* Profile image container */}
                         <motion.div
                             whileHover={{ scale: 1.05 }}
-                            className="relative w-80 h-80 rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 p-1"
+                            className="relative w-80 h-80 rounded-full p-1 bg-white/60 dark:bg-white/10 border border-white/40 dark:border-white/10 backdrop-blur-lg"
                         >
                             <div className="w-full h-full rounded-full bg-white dark:bg-gray-900 flex items-center justify-center">
                                 <div className="w-72 h-72 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center text-6xl">

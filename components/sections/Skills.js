@@ -109,10 +109,13 @@ function Skills({ skills }) {
             <motion.div
                 ref={categoryRef}
                 variants={itemVariants}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10"
+                className="rounded-xl p-6 transition-all duration-300
+                 bg-white/60 dark:bg-white/5 backdrop-blur-lg
+                 border border-white/40 dark:border-white/10
+                 hover:shadow-2xl"
             >
                 <motion.h3 
-                    className="text-2xl font-bold text-white mb-6 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+                    className="text-2xl font-bold text-center bg-gradient-to-r from-slate-800 to-slate-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent"
                     initial={{ opacity: 0, y: -10 }}
                     animate={categoryInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.2 }}
@@ -149,7 +152,7 @@ function Skills({ skills }) {
                 >
                     <motion.h2 
                         variants={itemVariants}
-                        className="text-4xl laptop:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                        className="text-4xl laptop:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 via-slate-600 to-slate-700 dark:from-blue-400 dark:via-indigo-400 dark:to-sky-400 bg-clip-text text-transparent"
                     >
                         Skills & Expertise
                     </motion.h2>
@@ -239,10 +242,13 @@ function Skills({ skills }) {
                         <motion.div
                             key={stat.label}
                             variants={itemVariants}
-                            className="text-center p-6 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-xl border border-blue-500/20 hover:border-purple-500/40 transition-all duration-300"
+                            className="text-center p-6 rounded-xl transition-all duration-300
+                 bg-white/60 dark:bg-white/5 backdrop-blur-lg
+                 border border-white/40 dark:border-white/10
+                 hover:shadow-2xl"
                         >
                             <motion.div 
-                                className="text-3xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+                                className="text-3xl font-bold mb-2 bg-gradient-to-r from-slate-800 to-slate-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent"
                                 initial={{ scale: 0 }}
                                 animate={isInView ? { scale: 1 } : {}}
                                 transition={{ delay: index * 0.1 + 0.5, type: "spring" }}

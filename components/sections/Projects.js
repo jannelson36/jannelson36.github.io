@@ -165,7 +165,7 @@ function Projects({ projects }) {
                                             {project.stack.map((tech, index) => (
                                                 <span
                                                     key={index}
-                                                    className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm border border-purple-500/30"
+                                                    className="px-3 py-1 rounded-full text-sm bg-white/50 dark:bg-white/10 text-gray-700 dark:text-purple-200 border border-white/40 dark:border-white/10 backdrop-blur-md"
                                                 >
                                                     {tech}
                                                 </span>
@@ -211,10 +211,13 @@ function Projects({ projects }) {
         return (
             <motion.div
                 variants={itemVariants}
-                className="group relative bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10"
+                className="group relative rounded-xl overflow-hidden transition-all duration-300
+                 bg-white/60 dark:bg-white/5 backdrop-blur-lg
+                 border border-white/40 dark:border-white/10
+                 hover:shadow-2xl"
             >
                 {/* Project Image */}
-                <div className="relative h-48 bg-gradient-to-br from-blue-500/20 to-purple-500/20 overflow-hidden">
+                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-sky-400/10 to-indigo-400/10 dark:from-sky-500/10 dark:to-indigo-500/10">
                     {project.images && project.images[0] ? (
                         <Image
                             src={project.images[0].path}
@@ -227,11 +230,11 @@ function Projects({ projects }) {
                             💻
                         </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent dark:from-black/70"></div>
                     
                     {/* Project Type Badge */}
                     <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-blue-500/80 backdrop-blur-sm text-white text-xs font-medium rounded-full">
+                        <span className="px-3 py-1 bg-white/50 dark:bg-white/10 backdrop-blur-md text-gray-800 dark:text-white text-xs font-medium rounded-full border border-white/40 dark:border-white/10">
                             {project.type}
                         </span>
                     </div>
@@ -254,13 +257,13 @@ function Projects({ projects }) {
                             {project.stack.slice(0, 3).map((tech, techIndex) => (
                                 <span
                                     key={techIndex}
-                                    className="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded"
+                                    className="px-2 py-1 text-xs rounded bg-white/50 dark:bg-white/10 text-gray-700 dark:text-purple-200 border border-white/40 dark:border-white/10 backdrop-blur-md"
                                 >
                                     {tech}
                                 </span>
                             ))}
                             {project.stack.length > 3 && (
-                                <span className="px-2 py-1 bg-gray-700 text-gray-400 text-xs rounded">
+                                <span className="px-2 py-1 text-xs rounded bg-white/50 dark:bg-white/5 text-gray-600 dark:text-gray-400 border border-white/30 dark:border-white/10 backdrop-blur-sm">
                                     +{project.stack.length - 3}
                                 </span>
                             )}
@@ -271,7 +274,7 @@ function Projects({ projects }) {
                     <div className="flex gap-2">
                         <button
                             onClick={() => openModal(project)}
-                            className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium rounded-lg hover:shadow-lg transition-all duration-300"
+                            className="flex-1 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 bg-white/60 dark:bg-white/10 text-gray-800 dark:text-white border border-white/40 dark:border-white/10 backdrop-blur-md hover:shadow-xl"
                         >
                             View Details
                         </button>
@@ -280,7 +283,7 @@ function Projects({ projects }) {
                                 href={project.links.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-2 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors"
+                                className="p-2 rounded-lg transition-colors bg-white/60 dark:bg-white/10 text-gray-700 dark:text-gray-300 border border-white/40 dark:border-white/10 backdrop-blur-md hover:shadow"
                             >
                                 <GitHubIcon className="w-5 h-5" />
                             </a>

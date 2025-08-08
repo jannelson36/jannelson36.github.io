@@ -108,7 +108,7 @@ function Navigation() {
                             className="flex-shrink-0"
                         >
                             <Link href="#hero" onClick={(e) => smoothScroll(e, '#hero')}>
-                                <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                                <span className="text-2xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
                                     JN
                                 </span>
                             </Link>
@@ -137,7 +137,7 @@ function Navigation() {
                                             {activeSection === item.href.substring(1) && (
                                                 <motion.div
                                                     layoutId="activeSection"
-                                                    className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg border border-blue-500/30"
+                                                    className="absolute inset-0 rounded-lg border border-white/40 dark:border-white/10 bg-white/50 dark:bg-white/10 backdrop-blur-md"
                                                     initial={false}
                                                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                                 />
@@ -191,7 +191,7 @@ function Navigation() {
                             <div className="flex flex-col h-full">
                                 {/* Header */}
                                 <div className="flex items-center justify-between p-6 border-b border-gray-700/50">
-                                    <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                                    <span className="text-xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
                                         Navigation
                                     </span>
                                     <motion.button
@@ -218,7 +218,7 @@ function Navigation() {
                                                         onClick={(e) => smoothScroll(e, item.href)}
                                                         className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 group ${
                                                             activeSection === item.href.substring(1)
-                                                                ? 'text-white bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30'
+                                                                ? 'text-gray-900 dark:text-white bg-white/50 dark:bg-white/10 border border-white/40 dark:border-white/10 backdrop-blur-md'
                                                                 : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
                                                         }`}
                                                     >
@@ -253,7 +253,7 @@ function Navigation() {
 
             {/* Scroll Progress Indicator */}
             <motion.div
-                className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 z-50 origin-left"
+                className="fixed top-0 left-0 right-0 h-1 z-50 origin-left bg-white/50 dark:bg-white/10 backdrop-blur"
                 style={{
                     scaleX: scrolled ? 1 : 0,
                 }}

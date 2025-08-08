@@ -385,7 +385,7 @@ function SlugPage({ projectDetails }) {
                                                 width={400}
                                                 height={600}
                                                 priority
-                                                className="w-[100%] border-[2px] mt-5 border-solid border-[#350078] rounded-[5px] p-3"
+                                                className="w-[100%] border-[2px] mt-5 border-solid border-gray-300 dark:border-[#350078] rounded-[5px] p-3 bg-white/50 dark:bg-transparent backdrop-blur-sm"
                                             />
                                         </motion.div>
                                     ))}

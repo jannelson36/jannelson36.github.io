@@ -198,7 +198,7 @@ function Contact() {
                 >
                     <motion.h2 
                         variants={itemVariants}
-                        className="text-4xl laptop:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                        className="text-4xl laptop:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 via-slate-600 to-slate-700 dark:from-blue-400 dark:via-indigo-400 dark:to-sky-400 bg-clip-text text-transparent"
                     >
                         Get In Touch
                     </motion.h2>
@@ -261,7 +261,7 @@ function Contact() {
                                             rel="noopener noreferrer"
                                             whileHover={{ scale: 1.1, y: -5 }}
                                             whileTap={{ scale: 0.9 }}
-                                            className={`p-3 bg-gray-800/50 rounded-lg text-gray-400 ${social.color} transition-all duration-300 hover:bg-gray-700/50`}
+                                            className={`p-3 rounded-lg transition-all duration-300 bg-white/60 dark:bg-white/10 text-gray-700 dark:text-gray-400 border border-white/40 dark:border-white/10 backdrop-blur-md hover:shadow ${social.color}` }
                                         >
                                             <Icon className="w-6 h-6" />
                                         </motion.a>
@@ -273,7 +273,7 @@ function Contact() {
                         {/* Availability */}
                         <motion.div 
                             variants={itemVariants}
-                            className="bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 rounded-xl p-6"
+                            className="rounded-xl p-6 bg-white/60 dark:bg-white/5 backdrop-blur-lg border border-white/40 dark:border-white/10"
                         >
                             <div className="flex items-center space-x-3 mb-2">
                                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
@@ -290,7 +290,7 @@ function Contact() {
                         variants={itemVariants}
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
-                        className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50"
+                        className="rounded-2xl p-8 bg-white/60 dark:bg-white/5 backdrop-blur-lg border border-white/40 dark:border-white/10"
                     >
                         <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
                         
