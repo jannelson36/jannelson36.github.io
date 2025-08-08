@@ -306,7 +306,7 @@ function Projects({ projects }) {
                 >
                     <motion.h2 
                         variants={itemVariants}
-                        className="text-4xl laptop:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                        className="text-4xl laptop:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
                     >
                         Featured Projects
                     </motion.h2>
@@ -335,7 +335,7 @@ function Projects({ projects }) {
                                 placeholder="Search projects..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors"
+                                className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-colors"
                             />
                         </motion.div>
 
@@ -348,7 +348,7 @@ function Projects({ projects }) {
                                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                                         selectedFilter === type
                                             ? 'bg-purple-500 text-white shadow-lg'
-                                            : 'bg-gray-800/50 text-gray-400 hover:bg-gray-700 hover:text-white'
+                                            : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white'
                                     }`}
                                 >
                                     {type}

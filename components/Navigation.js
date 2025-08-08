@@ -109,7 +109,7 @@ function Navigation() {
                         >
                             <Link href="#hero" onClick={(e) => smoothScroll(e, '#hero')}>
                                 <span className="text-2xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-                                    JN
+                                    N.O
                                 </span>
                             </Link>
                         </motion.div>

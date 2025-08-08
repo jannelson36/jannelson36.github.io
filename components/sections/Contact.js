@@ -119,14 +119,14 @@ function Contact() {
         {
             icon: PhoneIcon,
             label: 'Phone',
-            value: '+1 (555) 123-4567',
-            href: 'tel:+15551234567',
+            value: '+254 (702) 041-745',
+            href: 'tel:+254702041745',
             color: 'from-green-500 to-emerald-500'
         },
         {
             icon: LocationOnIcon,
             label: 'Location',
-            value: 'New York, NY',
+            value: 'Nairobi, Kenya',
             href: '#',
             color: 'from-purple-500 to-pink-500'
         }
@@ -136,7 +136,7 @@ function Contact() {
         {
             icon: LinkedInIcon,
             name: 'LinkedIn',
-            href: 'https://linkedin.com/in/jannelson36',
+            href: 'https://linkedin.com/in/nelson-ongiri',
             color: 'hover:text-blue-400'
         },
         {

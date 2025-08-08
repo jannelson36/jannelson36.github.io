@@ -86,7 +86,7 @@ function Hero() {
     };
 
     return (
-        <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900">
+        <section id="hero" className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900 p-4 md:p-8">
             {/* Animated Background Particles */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute -inset-10 opacity-50">
@@ -135,7 +135,7 @@ function Hero() {
                         variants={itemVariants}
                         className="text-5xl laptop:text-7xl font-bold mb-4 bg-gradient-to-r from-slate-800 via-slate-600 to-slate-700 dark:from-blue-400 dark:via-indigo-400 dark:to-sky-400 bg-clip-text text-transparent"
                     >
-                        Jannelson
+                        Nelson Ongiri
                     </motion.h1>
                     
                     <motion.div
@@ -149,9 +149,9 @@ function Hero() {
                         variants={itemVariants}
                         className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-8 max-w-2xl"
                     >
-                        I&apos;m a passionate software engineer who loves building innovative solutions 
-                        and bringing ideas to life through code. I specialize in creating scalable 
-                        applications with modern technologies and best practices.
+                        I design, build, and productionize 
+                        full‑stack and AI-powered products—turning ambiguous ideas 
+                        into measurable business outcomes.
                     </motion.p>
                     
                     <motion.div
@@ -184,7 +184,7 @@ function Hero() {
                             whileTap={{ scale: 0.95 }}
                             className="px-8 py-3 bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 font-semibold rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300"
                         >
-                            <span className="flex items-center gap-2">
+                            <span href="/public/Resume.pdf" className="flex items-center gap-2">
                                 <DownloadIcon className="w-5 h-5" />
                                 Download CV
                             </span>
@@ -197,9 +197,9 @@ function Hero() {
                     >
                         {[
                             { icon: GitHubIcon, href: "https://github.com/jannelson36", color: "hover:text-gray-400" },
-                            { icon: LinkedInIcon, href: "https://linkedin.com/in/jannelson36", color: "hover:text-blue-400" },
-                            { icon: InstagramIcon, href: "https://instagram.com/jannelson36", color: "hover:text-pink-400" },
-                            { icon: EmailIcon, href: "mailto:contact@jannelson36.dev", color: "hover:text-green-400" }
+                            { icon: LinkedInIcon, href: "https://linkedin.com/in/nelson-ongiri", color: "hover:text-blue-400" },
+                            { icon: InstagramIcon, href: "https://instagram.com/_jannelson", color: "hover:text-pink-400" },
+                            { icon: EmailIcon, href: "mailto:nelsonjan75@gmail.com", color: "hover:text-green-400" }
                         ].map(({ icon: Icon, href, color }, index) => (
                             <motion.a
                                 key={index}
