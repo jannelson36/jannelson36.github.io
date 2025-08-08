@@ -86,14 +86,14 @@ function Hero() {
     };
 
     return (
-        <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+        <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900">
             {/* Animated Background Particles */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute -inset-10 opacity-50">
                     {[...Array(50)].map((_, i) => (
                         <motion.div
                             key={i}
-                            className="absolute bg-white rounded-full"
+                            className="absolute bg-gray-400 dark:bg-white rounded-full"
                             style={{
                                 width: Math.random() * 4 + 1 + 'px',
                                 height: Math.random() * 4 + 1 + 'px',
@@ -126,7 +126,7 @@ function Hero() {
                 >
                     <motion.div
                         variants={itemVariants}
-                        className="text-gray-300 text-lg font-medium mb-4"
+                        className="text-gray-700 dark:text-gray-300 text-lg font-medium mb-4"
                     >
                         👋 Hello, I&apos;m
                     </motion.div>
@@ -147,7 +147,7 @@ function Hero() {
                     
                     <motion.p
                         variants={itemVariants}
-                        className="text-gray-300 text-lg leading-relaxed mb-8 max-w-2xl"
+                        className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-8 max-w-2xl"
                     >
                         I&apos;m a passionate software engineer who loves building innovative solutions 
                         and bringing ideas to life through code. I specialize in creating scalable 
@@ -182,7 +182,7 @@ function Hero() {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-8 py-3 bg-gray-800 text-gray-300 font-semibold rounded-full hover:bg-gray-700 transition-all duration-300"
+                            className="px-8 py-3 bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 font-semibold rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300"
                         >
                             <span className="flex items-center gap-2">
                                 <DownloadIcon className="w-5 h-5" />
@@ -231,8 +231,8 @@ function Hero() {
                             whileHover={{ scale: 1.05 }}
                             className="relative w-80 h-80 rounded-full bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 p-1"
                         >
-                            <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
-                                <div className="w-72 h-72 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-6xl">
+                            <div className="w-full h-full rounded-full bg-white dark:bg-gray-900 flex items-center justify-center">
+                                <div className="w-72 h-72 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center text-6xl">
                                     👨‍💻
                                 </div>
                             </div>

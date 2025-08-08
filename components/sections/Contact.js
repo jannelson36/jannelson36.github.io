@@ -155,7 +155,7 @@ function Contact() {
 
     if (isSubmitted) {
         return (
-            <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 to-black">
+            <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black">
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <motion.div
                         initial={{ scale: 0, opacity: 0 }}
@@ -187,7 +187,7 @@ function Contact() {
     }
 
     return (
-        <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 to-black">
+        <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     ref={ref}

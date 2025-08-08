@@ -97,7 +97,7 @@ function ProjectsPage({ projects }) {
                             }}
                         >
                             <Link
-                                className="flex flex-row justify-center items-center border-solid border-[1px] border-[#350078] py-3 px-10 rounded-[8px] font-bold w-fit"
+                                className="flex flex-row justify-center items-center border-solid border-[1px] border-gray-300 dark:border-[#350078] py-3 px-10 rounded-[8px] font-bold w-fit"
                                 href={'/'}
                             >
                                 {" "}

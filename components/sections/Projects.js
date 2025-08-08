@@ -292,7 +292,7 @@ function Projects({ projects }) {
     };
 
     return (
-        <section id="projects" className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <section id="projects" className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-black dark:to-gray-900">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <motion.div
                     ref={ref}

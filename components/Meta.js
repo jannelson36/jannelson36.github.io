@@ -16,7 +16,8 @@ function Meta({
                 name="viewport"
                 content="width=device-width, initial-scale=1"
             />
-            <meta name="theme-color" content="#0D1117" />
+            <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+            <meta name="theme-color" content="#0D1117" media="(prefers-color-scheme: dark)" />
             <meta name="keywords" content={keywords} />
             <meta name="description" content={description} />
 

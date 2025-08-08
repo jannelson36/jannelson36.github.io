@@ -99,7 +99,7 @@ function SkillCardBlock({ icon, name }) {
     }
 
     return (
-        <div className="flex flex-row justify-evenly items-center gap-4 p-4 rounded-[5px] bg-[#226160]">
+        <div className="flex flex-row justify-evenly items-center gap-4 p-4 rounded-[5px] bg-gray-100 dark:bg-gray-800">
             {IconComponent && (
                 <div>
                     <IconComponent className="scale-[150%]" />

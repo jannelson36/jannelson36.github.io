@@ -20,7 +20,7 @@ function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 1 }}
                     transition={{ duration: 0.5, delay: 1 }}
-                    className="h-[2px] w-1/2 tablet:w-2/3 laptop:w-4/5 inline-block bg-[#174140]"
+                    className="h-[2px] w-1/2 tablet:w-2/3 laptop:w-4/5 inline-block bg-gray-300 dark:bg-[#174140]"
                 ></motion.div>
             </div>
 
@@ -36,7 +36,7 @@ function About() {
 
                     <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 1 }} transition={{ duration: 0.5, delay: 0.6 }}>
                         My expertise lies in designing cutting-edge websites and applications that not only dazzle with their aesthetics but also deliver seamless user experiences. 
-                        Leveraging frameworks like <span className="text-[#EBB700] font-bold">Next.js</span>, <span className="text-[#EBB700] font-bold">React.js</span> and <span className="text-[#EBB700] font-bold">Node.js</span>, I transform ideas into elegant and efficient digital realities.
+                        Leveraging frameworks like <span className="text-yellow-600 dark:text-yellow-400 font-bold">Next.js</span>, <span className="text-yellow-600 dark:text-yellow-400 font-bold">React.js</span> and <span className="text-yellow-600 dark:text-yellow-400 font-bold">Node.js</span>, I transform ideas into elegant and efficient digital realities.
                     </motion.p>
 
                     <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 1 }} transition={{ duration: 0.5, delay: 0.6 }}>
@@ -45,13 +45,13 @@ function About() {
 
                     <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 1 }} transition={{ duration: 0.5, delay: 0.7 }}>
                         As a versatile developer, I am fluent in various programming languages, including 
-                        <span className="text-[#EBB700] font-bold"> JavaScript</span>, 
-                        <span className="text-[#EBB700] font-bold"> TypeScript</span>, 
-                        <span className="text-[#EBB700] font-bold"> Java</span>, 
-                        <span className="text-[#EBB700] font-bold"> Python</span>, 
-                        <span className="text-[#EBB700] font-bold"> SQL</span>, 
-                        <span className="text-[#EBB700] font-bold"> PHP</span>, and the
-                        <span className="text-[#EBB700] font-bold"> venerable ‘C’</span>. 
+                        <span className="text-yellow-600 dark:text-yellow-400 font-bold"> JavaScript</span>, 
+                        <span className="text-yellow-600 dark:text-yellow-400 font-bold"> TypeScript</span>, 
+                        <span className="text-yellow-600 dark:text-yellow-400 font-bold"> Java</span>, 
+                        <span className="text-yellow-600 dark:text-yellow-400 font-bold"> Python</span>, 
+                        <span className="text-yellow-600 dark:text-yellow-400 font-bold"> SQL</span>, 
+                        <span className="text-yellow-600 dark:text-yellow-400 font-bold"> PHP</span>, and the
+                        <span className="text-yellow-600 dark:text-yellow-400 font-bold"> venerable ‘C’</span>. 
                         This breadth of knowledge empowers me to tackle diverse projects with confidence and precision.
                     </motion.p>
 

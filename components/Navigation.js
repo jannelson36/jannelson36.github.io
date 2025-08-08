@@ -96,7 +96,7 @@ function Navigation() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
                     scrolled 
-                        ? 'bg-gray-900/95 backdrop-blur-md border-b border-gray-700/50 shadow-lg' 
+                        ? 'bg-white/80 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-700/50 shadow-lg' 
                         : 'bg-transparent'
                 }`}
             >
