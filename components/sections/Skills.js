@@ -138,7 +138,7 @@ function Skills({ skills }) {
     };
 
     return (
-        <section id="skills" className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <section id="skills" className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-black">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     ref={ref}

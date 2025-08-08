@@ -55,8 +55,8 @@ function SlugPage({ projectDetails }) {
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link
-                                        className="flex flex-row justify-center items-center flex-nowrap border-solid border-[1px] border-[#350078] rounded-[8px] mobile:text-[0.85rem] tablet:text-[1rem] laptop:text-[1rem] desktop:text-[1rem] mobile:py-1 mobile:px-4 tablet:py-3 tablet:px-10 laptop:py-3 laptop:px-10 desktop:py-3 desktop:px-10"
+                                                                         <Link
+                                        className="flex flex-row justify-center items-center flex-nowrap border-solid border-[1px] border-gray-300 dark:border-[#350078] rounded-[8px] mobile:text-[0.85rem] tablet:text-[1rem] laptop:text-[1rem] desktop:text-[1rem] mobile:py-1 mobile:px-4 tablet:py-3 tablet:px-10 laptop:py-3 laptop:px-10 desktop:py-3 desktop:px-10"
                                         href={'/projects'}
                                     >
                                         {" "}
@@ -105,7 +105,7 @@ function SlugPage({ projectDetails }) {
                                     duration: 0.5,
                                     delay: 0.5,
                                 }}
-                                className="h-[2px] mobile:w-[70%] tablet:w-[70%] laptop:w-[80%] desktop:w-[80%] inline-block bg-[#350078]"
+                                className="h-[2px] mobile:w-[70%] tablet:w-[70%] laptop:w-[80%] desktop:w-[80%] inline-block bg-gray-300 dark:bg-[#350078]"
                             ></motion.div>
                         </div>
                         <motion.div
@@ -145,31 +145,31 @@ function SlugPage({ projectDetails }) {
                                 duration: 0.5,
                                 delay: 0.6,
                             }}
-                            className="h-[2px] w-full inline-block bg-[#350078]"
-                        ></motion.div>
-                        <div className="flex flex-row items-start gap-5 flex-wrap mobile:justify-start tablet:justify-start laptop:justify-center desktop:justify-center">
-                            <motion.div
-                                initial={{
-                                    opacity: 0,
-                                    y: 10,
-                                }}
-                                whileInView={{
-                                    opacity: 1,
-                                    y: 0,
-                                }}
-                                viewport={{
-                                    once: true,
-                                    amount: 1,
-                                }}
-                                transition={{
-                                    duration: 0.5,
-                                    delay: 0.3,
-                                }}
-                                className="flex flex-col justify-center items-start gap-5 rounded-[5px] border-solid border-[2px] border-[#350078] p-4"
-                            >
-                                <div className="text-[1rem] font-semibold">
-                                    Technologies
-                                </div>
+                            className="h-[2px] w-full inline-block bg-gray-300 dark:bg-[#350078]"
+                        >                             </motion.div>
+                             <div className="flex flex-row items-start gap-5 flex-wrap mobile:justify-start tablet:justify-start laptop:justify-center desktop:justify-center">
+                                 <motion.div
+                                     initial={{
+                                         opacity: 0,
+                                         y: 10,
+                                     }}
+                                     whileInView={{
+                                         opacity: 1,
+                                         y: 0,
+                                     }}
+                                     viewport={{
+                                         once: true,
+                                         amount: 1,
+                                     }}
+                                     transition={{
+                                         duration: 0.5,
+                                         delay: 0.3,
+                                     }}
+                                     className="flex flex-col justify-center items-start gap-5 rounded-[5px] border-solid border-[2px] border-gray-300 dark:border-[#350078] p-4"
+                                 >
+                                     <div className="text-[1rem] font-semibold">
+                                         Technologies
+                                     </div>
                                 {projectDetails.stack?.map((item, i) => (
                                     <div
                                         className="flex flex-row justify-center items-center gap-2"
@@ -197,7 +197,7 @@ function SlugPage({ projectDetails }) {
                                     duration: 0.5,
                                     delay: 0.3,
                                 }}
-                                className="flex flex-col justify-center items-center gap-5 rounded-[5px] border-solid border-[2px] border-[#350078] p-4"
+                                className="flex flex-col justify-center items-center gap-5 rounded-[5px] border-solid border-[2px] border-gray-300 dark:border-[#350078] p-4"
                             >
                                 <div className="text-[1rem] font-semibold">
                                     Type
@@ -221,7 +221,7 @@ function SlugPage({ projectDetails }) {
                                     duration: 0.5,
                                     delay: 0.3,
                                 }}
-                                className="flex flex-col justify-center items-center gap-5 rounded-[5px] border-solid border-[2px] border-[#350078] p-4"
+                                className="flex flex-col justify-center items-center gap-5 rounded-[5px] border-solid border-[2px] border-gray-300 dark:border-[#350078] p-4"
                             >
                                 <div className="text-[1rem] font-semibold">
                                     Timeline
@@ -261,7 +261,7 @@ function SlugPage({ projectDetails }) {
                                     duration: 0.5,
                                     delay: 0.3,
                                 }}
-                                className="flex flex-col justify-center items-center gap-5 rounded-[5px] border-solid border-[2px] border-[#350078] p-4"
+                                className="flex flex-col justify-center items-center gap-5 rounded-[5px] border-solid border-[2px] border-gray-300 dark:border-[#350078] p-4"
                             >
                                 <div className="text-[1rem] font-semibold">
                                     Associated
@@ -287,7 +287,7 @@ function SlugPage({ projectDetails }) {
                                     duration: 0.5,
                                     delay: 0.3,
                                 }}
-                                className="flex flex-col justify-center items-center gap-5 rounded-[5px] border-solid border-[2px] border-[#350078] p-4"
+                                className="flex flex-col justify-center items-center gap-5 rounded-[5px] border-solid border-[2px] border-gray-300 dark:border-[#350078] p-4"
                             >
                                 <div className="text-[1rem] font-semibold">
                                     Links
@@ -338,25 +338,25 @@ function SlugPage({ projectDetails }) {
                                     >
                                         Gallery
                                     </motion.div>
-                                    <motion.div
-                                        initial={{
-                                            opacity: 0,
-                                            y: 10,
-                                        }}
-                                        whileInView={{
-                                            opacity: 1,
-                                            y: 0,
-                                        }}
-                                        viewport={{
-                                            once: true,
-                                            amount: 1,
-                                        }}
-                                        transition={{
-                                            duration: 0.5,
-                                            delay: 0.6,
-                                        }}
-                                        className="h-[2px] mobile:w-[70%] tablet:w-[70%] laptop:w-[80%] desktop:w-[80%] inline-block bg-[#350078]"
-                                    ></motion.div>
+                                                                <motion.div
+                                initial={{
+                                    opacity: 0,
+                                    y: 10,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                }}
+                                viewport={{
+                                    once: true,
+                                    amount: 1,
+                                }}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: 0.6,
+                                }}
+                                className="h-[2px] mobile:w-[70%] tablet:w-[70%] laptop:w-[80%] desktop:w-[80%] inline-block bg-gray-300 dark:bg-[#350078]"
+                            ></motion.div>
                                 </div>
                                 <div className="flex flex-row justify-start items-center flex-wrap gap-5">
                                     {projectDetails.images?.map((image, i) => (

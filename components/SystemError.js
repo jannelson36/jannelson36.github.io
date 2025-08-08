@@ -7,7 +7,7 @@ export default function SystemError() {
             <h1 className="text-2xl">Oops! Looks like some problem on out end.</h1>
             <p className="text-xl">Please try again later.</p>
             <Link
-                className="flex flex-row justify-center items-center border-solid border-[1px] border-[#226160] py-3 px-10 rounded-[8px]"
+                className="flex flex-row justify-center items-center border-solid border-[1px] border-gray-300 dark:border-[#226160] py-3 px-10 rounded-[8px]"
                 href={"/"}
             >
                 {" "}

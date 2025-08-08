@@ -9,7 +9,7 @@ function ProjectCard({ title = '', slug = '', overview = '', stack = [], links =
     const safeLinks = links || {};
 
     return (
-        <div className="flex flex-col justify-between rounded-[8px] bg-[#226160] w-full sm:w-[20rem] md:w-[22rem] p-5 hover:-translate-y-[7px] transition-transform duration-200">
+        <div className="flex flex-col justify-between rounded-[8px] bg-white dark:bg-gray-800 w-full sm:w-[20rem] md:w-[22rem] p-5 hover:-translate-y-[7px] transition-transform duration-200 shadow dark:shadow-none border border-gray-200 dark:border-gray-700">
             <Link target="_top" href={`/projects/${slug}`}>
                 {imageUrl && (
                     <div className="mb-4 overflow-hidden rounded-md">
@@ -17,7 +17,7 @@ function ProjectCard({ title = '', slug = '', overview = '', stack = [], links =
                     </div>
                 )}
                 <div className="text-[22px] md:text-[24px] font-bold line-clamp-1">{title}</div>
-                <div className="py-4 text-sm md:text-base font-semibold text-[#e6e6e6] line-clamp-3">
+                <div className="py-4 text-sm md:text-base font-semibold text-gray-600 dark:text-gray-300 line-clamp-3">
                     {safeOverview.length > 160
                         ? safeOverview.slice(0, 160) + " ..."
                         : safeOverview.slice(0, 160)}
@@ -26,7 +26,7 @@ function ProjectCard({ title = '', slug = '', overview = '', stack = [], links =
             <div className="flex items-center justify-between mt-2">
                 <div className="flex gap-3">
                     {safeStack.slice(0, 3).map((item, i) => (
-                        <div key={i} className="text-[12px] text-[#d4d4d4]">
+                        <div key={i} className="text-[12px] text-gray-500 dark:text-gray-400">
                             {item}
                         </div>
                     ))}

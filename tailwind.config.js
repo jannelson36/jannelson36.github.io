@@ -11,6 +11,12 @@ module.exports = {
     darkMode: 'class',
     theme: {
         screens: {
+            xs: "475px",
+            sm: "640px",
+            md: "768px",
+            lg: "1024px",
+            xl: "1280px",
+            '2xl': "1536px",
             smallMobile: "280px",
             mobile: "320px",
             tablet: "640px",
@@ -60,7 +66,7 @@ module.exports = {
                         boxShadow: "0 0 9px 0 #2e8280",
                     },
                     "80%": {
-                        backgroundColor: "#2e82800",
+                        backgroundColor: "#2e8280",
                         boxShadow: "0 0 11px 0 #349290",
                     },
                     "90%": {
