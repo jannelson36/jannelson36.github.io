@@ -1,124 +1,19 @@
-import React from "react";
-import styles from "@/styles/index.module.css";
-import { motion } from "framer-motion";
-import ProjectCard from "@/components/ProjectCard";
-import allProjects from "@/data/projectData/index.json";
-import HomeOutlinedIcon from "@mui/icons-material/HomeRounded";
 import Link from "next/link";
 import Meta from "@/components/Meta";
-import { getGitHubOgImageUrl } from "@/hooks/useAxios";
+import allProjects from "@/data/projectData/index.json";
 
-function toRepoFullName(project) {
-    const gh = project?.links?.github || "";
-    try {
-        if (gh.includes("github.com")) {
-            const parts = gh.replace(/\.git$/, "").split("github.com/")[1].split("/");
-            const owner = parts[0];
-            const repo = parts[1];
-            if (owner && repo) return `${owner}/${repo}`;
-        }
-    } catch {}
-    // fallback to owner's username with repo_name
-    return `jannelson36/${project.repo_name}`;
-}
-
-function ProjectsPage({ projects }) {
+export default function ProjectsPage({ projects }) {
     return (
-        <>
-            <Meta
-                title={"Projects | jannelson36.github.io"}
-                seoTitle={"Projects | jannelson36.github.io"}
-                seoURL={"https://jannelson36.github.io/projects"}
-            />
-            <div className="mt-[60px]">
-                <div className={styles.container}>
-                    <div className="flex flex-row justify-between items-center gap-10">
-                        <div className="text-[3rem] font-semibold">
-                            Projects
-                        </div>
-                        <div>
-                            <Link href={'/'}>
-                                <HomeOutlinedIcon className="text-[2rem]" />
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="flex flex-row justify-center items-stretch flex-wrap gap-5 mobile:mt-[2rem] tablet:mt-[2rem] laptop:mt-[5rem] desktop:mt-[5rem]">
-                        {
-                            projects?.map((project, i) => (
-                                <motion.div
-                                    initial={{
-                                        opacity: 0,
-                                        y: 10,
-                                    }}
-                                    whileInView={{
-                                        opacity: 1,
-                                        y: 0,
-                                    }}
-                                    viewport={{
-                                        once: true,
-                                        amount: 1,
-                                    }}
-                                    transition={{
-                                        duration: 0.5,
-                                        delay: i / 11,
-                                    }}
-                                    key={i}
-                                >
-                                    <ProjectCard
-                                        title={project.title}
-                                        slug={project.repo_name}
-                                        stack={project.stack}
-                                        overview={project.overview}
-                                        links={project.links}
-                                        imageUrl={project.ogImage || null}
-                                        key={i}
-                                    />
-                                </motion.div>
-                            ))
-                        }
-                    </div>
-                    <div className="flex flex-row justify-center items-center mt-8">
-                        <motion.div
-                            initial={{
-                                opacity: 0,
-                                y: 10,
-                            }}
-                            whileInView={{
-                                opacity: 1,
-                                y: 0,
-                            }}
-                            viewport={{
-                                once: true,
-                                amount: 1,
-                            }}
-                            transition={{
-                                duration: 0.5,
-                                delay: 0.6,
-                            }}
-                        >
-                            <Link
-                                className="flex flex-row justify-center items-center border-solid border-[1px] border-gray-300 dark:border-[#350078] py-3 px-10 rounded-[8px] font-bold w-fit"
-                                href={'/'}
-                            >
-                                {" "}
-                                Return to home{" "}
-                            </Link>
-                        </motion.div>
-                    </div>
-                </div>
-            </div>
-        </>
+        <main className="min-h-screen bg-[#f7f7f3] text-slate-950 dark:bg-[#10120f] dark:text-stone-100">
+            <Meta title="Work | Jan Nelson" seoTitle="Work | Jan Nelson" seoURL="https://jannelson36.github.io/projects" />
+            <header className="border-b border-stone-300 px-6 py-5 dark:border-stone-800 sm:px-10 lg:px-16"><div className="mx-auto flex max-w-7xl items-center justify-between"><Link href="/" className="font-semibold tracking-[-.04em]">Jan Nelson<span className="text-amber-600 dark:text-lime-300">.</span></Link><Link href="/#contact" className="text-sm underline underline-offset-4">Get in touch</Link></div></header>
+            <section className="px-6 pb-24 pt-20 sm:px-10 lg:px-16"><div className="mx-auto max-w-7xl"><p className="font-mono text-xs uppercase tracking-[.24em] text-stone-500">Archive</p><div className="mt-5 flex flex-col justify-between gap-7 md:flex-row md:items-end"><h1 className="max-w-3xl text-5xl font-semibold leading-[.95] tracking-[-.06em] sm:text-7xl">Selected work, collected in one place.</h1><p className="max-w-xs text-stone-600 dark:text-stone-300">A mix of recent client work, personal projects, and technical explorations.</p></div>
+                <div className="mt-20 divide-y divide-stone-300 border-y border-stone-300 dark:divide-stone-800 dark:border-stone-800">{projects.map((project, index) => <Link key={project.slug} href={`/projects/${project.repo_name}`} className="group grid gap-4 py-7 transition hover:px-3 sm:grid-cols-[72px_1.2fr_1fr_auto] sm:items-center"><span className="font-mono text-xs text-stone-500">{String(index + 1).padStart(2, "0")}</span><h2 className="text-3xl font-semibold tracking-[-.04em]">{project.title}</h2><p className="text-sm leading-relaxed text-stone-600 dark:text-stone-300">{project.overview || project.type}</p><span className="text-sm text-stone-500 transition group-hover:text-slate-950 dark:group-hover:text-white">View project ↗</span></Link>)}</div>
+            </div></section>
+        </main>
     );
 }
 
-export default ProjectsPage;
-
 export async function getStaticProps() {
-    const projects = allProjects.map((project) => {
-        const repoFull = toRepoFullName(project);
-        return { ...project, ogImage: getGitHubOgImageUrl(repoFull) };
-    });
-    return {
-        props: { projects }
-    };
+    return { props: { projects: allProjects } };
 }
