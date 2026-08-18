@@ -1,11 +1,11 @@
 import Head from "next/head";
 
 function Meta({
-    title = "Jan Nelson | Software Developer",
+    title = "Jan Nelson | Full-stack Developer",
     keywords = "web dev, web development, software development, web development articles, web development blogs, web development portfolio, portfolio website",
-    description = "Jan Nelson is a software developer who specializes in building exceptional digital experiences and this particular portfolio project is designed and built by Jan Nelson.",
-    seoTitle = "Jan Nelson | Software Developer",
-    seoDescription = "Jan Nelson is a software developer who specializes in building exceptional digital experiences and this particular portfolio project is designed and built by Jan Nelson.",
+    description = "Jan Nelson is a full-stack developer building thoughtful, dependable web products.",
+    seoTitle = "Jan Nelson | Full-stack Developer",
+    seoDescription = "Selected web products and full-stack development work by Jan Nelson.",
     seoURL = "https://jannelson36.github.io/",
     seoImage = "https://user-images.githubusercontent.com/113659942/231727880-4a93c014-a9a6-4071-9920-c7b66ba4ab9a.png",
     twitterCreator = "jannelson",

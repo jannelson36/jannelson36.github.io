@@ -1,5 +1,41 @@
 [
     {
+        "repo_name": "linel",
+        "title": "Linel",
+        "slug": "linel",
+        "type": "Website · 2026",
+        "overview": "Design and development. Visit linel.co.ke.",
+        "timeline": { "startDate": "2026", "endDate": "Live" },
+        "associated": { "name": "Client project" },
+        "stack": ["Design", "Development", "Launch"],
+        "links": { "github": "", "hosted": "https://linel.co.ke" },
+        "images": []
+    },
+    {
+        "repo_name": "getnexus",
+        "title": "Nexus",
+        "slug": "getnexus",
+        "type": "Website · 2026",
+        "overview": "Design and development. Visit getnexus.africa.",
+        "timeline": { "startDate": "2026", "endDate": "Live" },
+        "associated": { "name": "Client project" },
+        "stack": ["Design", "Development", "Launch"],
+        "links": { "github": "", "hosted": "https://getnexus.africa" },
+        "images": []
+    },
+    {
+        "repo_name": "mnimoniko",
+        "title": "Mni Moniko",
+        "slug": "mnimoniko",
+        "type": "Website · 2026",
+        "overview": "Design and development. Visit mnimoniko.com.",
+        "timeline": { "startDate": "2026", "endDate": "Live" },
+        "associated": { "name": "Client project" },
+        "stack": ["Design", "Development", "Launch"],
+        "links": { "github": "", "hosted": "https://mnimoniko.com" },
+        "images": []
+    },
+    {
         "repo_name": "Data-Visualization",
         "title": "Data Visualization",
         "slug": "data-viz",

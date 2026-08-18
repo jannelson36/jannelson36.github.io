@@ -6,7 +6,6 @@ import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
 import Contact from "@/components/sections/Contact";
 import GitHubStats from "@/components/GitHubStats";
-import DarkModeToggle from "@/components/DarkModeToggle";
 import { useState } from "react";
 import Meta from "@/components/Meta";
 
@@ -20,9 +19,8 @@ export default function Home({ projects: initialProjects, skills: initialSkills 
     const [skills, setSkills] = useState(initialSkills || []);
 
     return (
-        <main className="pt-16 min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-4 sm:px-6">
+        <main className="min-h-screen bg-[#f7f7f3] text-slate-950 selection:bg-amber-200 dark:bg-[#10120f] dark:text-stone-100">
             <Meta />
-            <DarkModeToggle />
             <Navigation />
             <Hero />
             <div className={styles.container}>
